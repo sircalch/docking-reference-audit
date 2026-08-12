@@ -1,0 +1,5 @@
+# Environment recorded for the v0.1 audit and figure rendering.
+gemmi==0.7.5
+matplotlib==3.10.1
+meeko==0.7.1
+rdkit==2024.9.6
