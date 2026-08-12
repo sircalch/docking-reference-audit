@@ -34,9 +34,15 @@ MANIFEST_FIELDS = (
 )
 
 
-def load_candidates(path: Path) -> list[dict[str, str]]:
+def load_candidates(path: Path, case_ids: set[str] | None = None) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
-        return [row for row in csv.DictReader(handle) if row.get("status") == "candidate"]
+        rows = [row for row in csv.DictReader(handle) if row.get("status") == "candidate"]
+    if case_ids is None:
+        return rows
+    missing = case_ids.difference(row["case_id"] for row in rows)
+    if missing:
+        raise ValueError(f"unknown candidate case IDs: {', '.join(sorted(missing))}")
+    return [row for row in rows if row["case_id"] in case_ids]
 
 
 def load_existing_manifest(path: Path) -> dict[str, dict[str, str]]:
@@ -84,11 +90,25 @@ def main() -> int:
     parser.add_argument("--raw-dir", type=Path, default=Path("raw/structures"))
     parser.add_argument("--manifest", type=Path, default=Path("data/retrieval_manifest.csv"))
     parser.add_argument("--timeout", type=int, default=60, help="per-download HTTPS timeout in seconds")
+    parser.add_argument("--case-id", action="append", default=[], help="retry only this registered case ID; may be repeated")
     args = parser.parse_args()
 
     existing_rows = load_existing_manifest(args.manifest)
+    requested_ids = set(args.case_id) or None
+    try:
+        selected = load_candidates(args.candidates, requested_ids)
+    except ValueError as error:
+        parser.error(str(error))
+    all_candidates = load_candidates(args.candidates)
+    selected_ids = {candidate["case_id"] for candidate in selected}
     rows: list[dict[str, str]] = []
-    for candidate in load_candidates(args.candidates):
+    for candidate in all_candidates:
+        if candidate["case_id"] not in selected_ids:
+            existing = existing_rows.get(candidate["case_id"])
+            if existing is None:
+                raise ValueError(f"{candidate['case_id']}: missing existing manifest row during targeted retrieval")
+            rows.append({field: existing.get(field, "") for field in MANIFEST_FIELDS})
+            continue
         pdb_id = candidate["pdb_id"].upper()
         destination = args.raw_dir / f"{candidate['case_id']}_{pdb_id}.cif"
         source_url = f"{FILES_ROOT}/{pdb_id}.cif"
