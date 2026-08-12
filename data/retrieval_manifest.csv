@@ -1,0 +1,9 @@
+case_id,pdb_id,format,source_url,retrieved_at_utc,local_path,bytes,sha256,status,error
+pilot-001,1STP,mmCIF,https://files.rcsb.org/download/1STP.cif,2026-08-12T07:00:09.564434Z,raw/structures/pilot-001_1STP.cif,148195,36be77b9722ebb9f603b27bf16cbc30057f87ab9923a2d2adab0eadbdb30c30f,retrieved,
+pilot-002,1HVR,mmCIF,https://files.rcsb.org/download/1HVR.cif,2026-08-12T07:00:11.028532Z,raw/structures/pilot-002_1HVR.cif,233902,88ae65ea8ab9756b408a94ab02fe922c1d80a79e6226d796f2a565aea3c0dda6,retrieved,
+pilot-003,1IEP,mmCIF,https://files.rcsb.org/download/1IEP.cif,2026-08-12T07:00:12.390939Z,raw/structures/pilot-003_1IEP.cif,526113,0929a6fae4aa67875ed0c8d06b650f0a4ec7bb104011abfc7c8ee402c672ca27,retrieved,
+pilot-004,1FPU,mmCIF,https://files.rcsb.org/download/1FPU.cif,2026-08-12T07:00:14.855405Z,raw/structures/pilot-004_1FPU.cif,490768,67298b2666f60457a21b2784a580d9a65896a055e90bae64d1afe377571f0cee,retrieved,
+pilot-005,2P16,mmCIF,https://files.rcsb.org/download/2P16.cif,2026-08-12T07:00:17.713705Z,raw/structures/pilot-005_2P16.cif,290924,f9f2239e3cc0b94f0bd9ba2c302e1d3e7dd4b044ac1d9a08d5f9927d551ed40b,retrieved,
+pilot-006,3PTB,mmCIF,https://files.rcsb.org/download/3PTB.cif,2026-08-12T07:00:20.301113Z,raw/structures/pilot-006_3PTB.cif,230954,d2744dbacfb97ec9b4ff7f5cf4b204418bccf92e46b63130bfebb3916260232f,retrieved,
+pilot-007,3D4Q,mmCIF,https://files.rcsb.org/download/3D4Q.cif,2026-08-12T07:00:21.747387Z,raw/structures/pilot-007_3D4Q.cif,477469,034d6572fda3bb64e13c3b42ef5d55466f3ec4704f47d1357fa23bf802d0d983,retrieved,
+pilot-008,3CJO,mmCIF,https://files.rcsb.org/download/3CJO.cif,2026-08-12T07:00:25.639899Z,raw/structures/pilot-008_3CJO.cif,647811,94f8d6c475d6533d39cc2cd7241cc557af2eb058cd3da0495eb98abd77d9e705,retrieved,
