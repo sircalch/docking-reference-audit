@@ -30,6 +30,12 @@ whose component is not an obvious solvent, simple ion, common crystallization
 additive, or prosthetic group. The mmCIF inventory is then authoritative for
 the clean/contextual classification.
 
+To limit target-family dominance, do not add a second clean-execution candidate
+for a target already represented by an earlier clean-execution batch while an
+eligible candidate for a distinct target remains in the same discovery queue.
+Such a skip is recorded in `data/screening_log.csv`. This is a diversity rule,
+not a quality judgment on the skipped structure.
+
 If a candidate is contextual or fails strict preparation, retain its result and
 continue in the predeclared ascending order. Do not replace it merely because
 its outcome is inconvenient.

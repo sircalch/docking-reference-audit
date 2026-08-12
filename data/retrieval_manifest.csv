@@ -19,3 +19,5 @@ expansion-009,9CY0,mmCIF,https://files.rcsb.org/download/9CY0.cif,2026-08-12T21:
 expansion-010,6FMC,mmCIF,https://files.rcsb.org/download/6FMC.cif,2026-08-12T21:12:58.077503Z,raw/structures/expansion-010_6FMC.cif,434944,d52f70446a29ee28cfc647e599b8c3eaeb7c54a37aa5f5c9c15b709354f63bd9,retrieved,
 expansion-011,7G0Z,mmCIF,https://files.rcsb.org/download/7G0Z.cif,2026-08-12T21:19:34.969683Z,raw/structures/expansion-011_7G0Z.cif,597750,43389144d736325903b950fbd9f473d13844fc80a66bcbe9795a814b2ad3b7ac,retrieved,
 expansion-012,7AOT,mmCIF,https://files.rcsb.org/download/7AOT.cif,2026-08-12T21:23:53.802602Z,raw/structures/expansion-012_7AOT.cif,524336,e17c38e6e9d3cb035e98a7c3fd3061f7e165e960924e0d9882aeea2e8255e7ac,retrieved,
+expansion-013,7TH6,mmCIF,https://files.rcsb.org/download/7TH6.cif,2026-08-12T21:43:21.419207Z,raw/structures/expansion-013_7TH6.cif,,,failed,HTTP Error 504: Gateway Time-out
+expansion-014,6Q7D,mmCIF,https://files.rcsb.org/download/6Q7D.cif,2026-08-12T21:44:51.576470Z,raw/structures/expansion-014_6Q7D.cif,,,failed,HTTP Error 502: Bad Gateway

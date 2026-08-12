@@ -1,3 +1,13 @@
 screened_at_utc,pdb_id,decision,reason,source_url
 2026-08-12T06:49:00Z,1A30,rejected,No non-polymeric entity listed in current RCSB entry metadata; cannot define a small-molecule reference ligand.,https://data.rcsb.org/rest/v1/core/entry/1A30
 2026-08-12T06:49:00Z,1BRC,rejected,No non-polymeric entity listed in current RCSB entry metadata; cannot define a small-molecule reference ligand.,https://data.rcsb.org/rest/v1/core/entry/1BRC
+2026-08-12T21:39:20Z,7TX0,rejected,Discovery rank 54: AR6 is a nucleotide analogue; excluded by the frozen discovery procedure.,https://data.rcsb.org/rest/v1/core/entry/7TX0
+2026-08-12T21:39:20Z,1X8Q,rejected,Discovery rank 57: HEM is a covalent prosthetic group; excluded by the frozen discovery procedure.,https://data.rcsb.org/rest/v1/core/entry/1X8Q
+2026-08-12T21:39:20Z,7KQP,rejected,Discovery rank 76: AR6 is a nucleotide analogue; excluded by the frozen discovery procedure.,https://data.rcsb.org/rest/v1/core/entry/7KQP
+2026-08-12T21:39:20Z,7APW,skipped,Discovery rank 86: organic FKBP51 ligand, but skipped by the target-diversity rule because 7AOT already represents FKBP51.,https://data.rcsb.org/rest/v1/core/entry/7APW
+2026-08-12T21:39:20Z,8R5K,skipped,Discovery rank 88: organic FKBP51 ligand, but skipped by the target-diversity rule because 7AOT already represents FKBP51.,https://data.rcsb.org/rest/v1/core/entry/8R5K
+2026-08-12T21:39:20Z,7APS,skipped,Discovery rank 148: organic FKBP51 ligand, but skipped by the target-diversity rule because 7AOT already represents FKBP51.,https://data.rcsb.org/rest/v1/core/entry/7APS
+2026-08-12T21:39:20Z,7HCP,skipped,Discovery rank 194: SARS-CoV-2 NSP3 macrodomain ligand, but skipped by the target-diversity rule because 9CY0 already represents that target context.,https://data.rcsb.org/rest/v1/core/entry/7HCP
+2026-08-12T21:39:20Z,7IJ3,skipped,Discovery rank 213: SARS-CoV-2 NSP3 macrodomain ligand, but skipped by the target-diversity rule because 9CY0 already represents that target context.,https://data.rcsb.org/rest/v1/core/entry/7IJ3
+2026-08-12T21:42:47Z,7TH6,retrieval_failed,Discovery rank 216: selected organic cyclophilin-D ligand; original mmCIF recovery received HTTP 502 from the RCSB file service and remains a retained infrastructure outcome pending a later retry.,https://files.rcsb.org/download/7TH6.cif
+2026-08-12T21:42:47Z,6Q7D,retrieval_failed,Discovery rank 221: selected organic EphA2 ligand; original mmCIF recovery received HTTP 502 from the RCSB file service and remains a retained infrastructure outcome pending a later retry.,https://files.rcsb.org/download/6Q7D.cif

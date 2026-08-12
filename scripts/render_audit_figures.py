@@ -144,6 +144,73 @@ def pose_recovery(rows: list[dict[str, str]], destination: Path) -> None:
     save(figure, destination / "figure-03-reference-pose-outcomes")
 
 
+def evidence_flow(
+    candidates: list[dict[str, str]],
+    retrieval: list[dict[str, str]],
+    inventory: list[dict[str, str]],
+    preparation: list[dict[str, str]],
+    rmsd: list[dict[str, str]],
+    destination: Path,
+) -> None:
+    retrieved = sum(row["status"] == "retrieved" for row in retrieval)
+    retrieval_failed = sum(row["status"] != "retrieved" for row in retrieval)
+    clean = sum(row["stratum"] == "clean" for row in inventory)
+    contextual = sum(row["stratum"] == "contextual" for row in inventory)
+    prepared = sum(row["status"] == "prepared" for row in preparation)
+    rejected = sum(row["status"] == "failed" for row in preparation)
+    completed_cases = len({row["case_id"] for row in rmsd})
+    stages = [
+        ("Registered\ncandidates", len(candidates), NAVY),
+        ("Original mmCIF\nretrieved", retrieved, TEAL),
+        ("Frozen\ninventory", len(inventory), NAVY),
+        ("Strict preparation\nprepared", prepared, TEAL),
+        ("Completed\nreference-pose runs", completed_cases, TEAL),
+    ]
+    figure, axis = plt.subplots(figsize=(11.0, 4.8))
+    axis.set_xlim(-0.6, len(stages) - 0.4)
+    axis.set_ylim(-1.1, 1.2)
+    axis.axis("off")
+    for index, (label, value, color) in enumerate(stages):
+        axis.scatter(index, 0.2, s=2200, color=color, zorder=3, edgecolor="white", linewidth=2)
+        axis.text(index, 0.28, str(value), ha="center", va="center", color="white", weight="bold", fontsize=15, zorder=4)
+        axis.text(index, -0.43, label, ha="center", va="top", color=NAVY, weight="bold", fontsize=9)
+        if index < len(stages) - 1:
+            axis.annotate("", xy=(index + 0.73, 0.2), xytext=(index + 0.27, 0.2), arrowprops={"arrowstyle": "-|>", "color": "#B6C2C8", "lw": 2.3})
+    axis.text(
+        1.0,
+        0.83,
+        f"{retrieval_failed} retrieval failures retained",
+        ha="center",
+        color=CORAL,
+        weight="bold",
+        fontsize=9,
+    )
+    axis.annotate("", xy=(1.0, 0.43), xytext=(1.0, 0.72), arrowprops={"arrowstyle": "-|>", "color": CORAL, "lw": 1.5})
+    axis.text(
+        2.0,
+        0.83,
+        f"{clean} clean; {contextual} contextual",
+        ha="center",
+        color=GOLD,
+        weight="bold",
+        fontsize=9,
+    )
+    axis.annotate("", xy=(2.0, 0.43), xytext=(2.0, 0.72), arrowprops={"arrowstyle": "-|>", "color": GOLD, "lw": 1.5})
+    axis.text(
+        3.0,
+        0.83,
+        f"{rejected} strict rejections retained",
+        ha="center",
+        color=CORAL,
+        weight="bold",
+        fontsize=9,
+    )
+    axis.annotate("", xy=(3.0, 0.43), xytext=(3.0, 0.72), arrowprops={"arrowstyle": "-|>", "color": CORAL, "lw": 1.5})
+    axis.set_title("Evidence flow from public structures to verified reference poses", color=NAVY, pad=16)
+    axis.text(2.0, -0.92, "Counts are a manifest snapshot; branches are retained rather than removed from the record.", ha="center", color=GRAY, fontsize=8.5)
+    save(figure, destination / "figure-04-evidence-flow")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path, default=Path("data"))
@@ -151,6 +218,8 @@ def main() -> int:
     args = parser.parse_args()
     setup()
     inventory = read_rows(args.data_dir / "eligibility_register.csv")
+    candidates = read_rows(args.data_dir / "candidates.csv")
+    retrieval = read_rows(args.data_dir / "retrieval_manifest.csv")
     preparation = read_rows(args.data_dir / "strict_preparation_manifest.csv")
     for manifest in sorted(args.data_dir.glob("clean_batch_*_preparation_manifest.csv")):
         preparation.extend(read_rows(manifest))
@@ -158,7 +227,8 @@ def main() -> int:
     inventory_disposition(inventory, args.output_dir)
     preparation_outcomes(preparation, args.output_dir)
     pose_recovery(rmsd, args.output_dir)
-    print(f"Rendered 3 figures to {args.output_dir}")
+    evidence_flow(candidates, retrieval, inventory, preparation, rmsd, args.output_dir)
+    print(f"Rendered 4 figures to {args.output_dir}")
     return 0
 
 

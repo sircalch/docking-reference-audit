@@ -17,3 +17,4 @@ The recorded Python dependencies for this version are in `requirements.txt`.
 | `figure-01-structural-inventory` | Shows clean/contextual inventory disposition | `data/eligibility_register.csv` | Structural class is not a docking result. |
 | `figure-02-strict-preparation` | Shows every recorded strict preparation outcome | preparation manifests | A rejection is compatibility with this frozen no-repair policy, not an intrinsic defect of a PDB entry. |
 | `figure-03-reference-pose-outcomes` | Shows all retained Vina poses against experimental reference RMSD | `data/reference_pose_rmsd.csv` | Small current sample; no comparative performance claim. |
+| `figure-04-evidence-flow` | Shows the audited path from candidate registration to verified reference poses | candidate, retrieval, inventory, preparation, and RMSD manifests | Snapshot counts include retained retrieval and strict-preparation failures; not a performance funnel. |

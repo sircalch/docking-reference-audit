@@ -60,10 +60,10 @@ def verified_cached_row(
     return {field: existing.get(field, "") for field in MANIFEST_FIELDS}
 
 
-def download_mmcif(pdb_id: str) -> bytes:
+def download_mmcif(pdb_id: str, timeout: int) -> bytes:
     source_url = f"{FILES_ROOT}/{pdb_id.upper()}.cif"
     request = Request(source_url, headers={"User-Agent": USER_AGENT, "Accept": "chemical/x-cif,text/plain"})
-    with urlopen(request, timeout=60) as response:  # nosec B310: fixed HTTPS archive root
+    with urlopen(request, timeout=timeout) as response:  # nosec B310: fixed HTTPS archive root
         content = response.read()
     if not content.startswith(b"data_"):
         raise ValueError(f"{pdb_id}: response is not an mmCIF data block")
@@ -83,6 +83,7 @@ def main() -> int:
     parser.add_argument("--candidates", type=Path, default=Path("data/candidates.csv"))
     parser.add_argument("--raw-dir", type=Path, default=Path("raw/structures"))
     parser.add_argument("--manifest", type=Path, default=Path("data/retrieval_manifest.csv"))
+    parser.add_argument("--timeout", type=int, default=60, help="per-download HTTPS timeout in seconds")
     args = parser.parse_args()
 
     existing_rows = load_existing_manifest(args.manifest)
@@ -110,7 +111,7 @@ def main() -> int:
             "error": "",
         }
         try:
-            content = download_mmcif(pdb_id)
+            content = download_mmcif(pdb_id, args.timeout)
             destination.parent.mkdir(parents=True, exist_ok=True)
             temporary = destination.with_suffix(".cif.part")
             temporary.write_bytes(content)
