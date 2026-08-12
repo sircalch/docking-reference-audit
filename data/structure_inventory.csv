@@ -7,3 +7,11 @@ pilot-005,2P16,GG2,1,A;L,1,34,CA:1,ready_for_policy_review,other non-polymeric c
 pilot-006,3PTB,BEN,1,A,1,9,CA:1,ready_for_policy_review,other non-polymeric components require an explicit retention policy
 pilot-007,3D4Q,SM5,1,A;B,2,28;28,,ready_for_policy_review,no preliminary issue detected
 pilot-008,3CJO,K30,1,A;B,2,33;33,ADP:2;MG:2,ready_for_policy_review,other non-polymeric components require an explicit retention policy
+expansion-001,1B9V,RA2,1,A,1,25,CA:2;NAG:1,ready_for_policy_review,other non-polymeric components require an explicit retention policy
+expansion-002,1CDE,DZF,1,A;B;C;D,4,32;32;32;32,GAR:4,ready_for_policy_review,other non-polymeric components require an explicit retention policy
+expansion-003,1E66,HUX,1,A,1,21,NAG:2,ready_for_policy_review,other non-polymeric components require an explicit retention policy
+expansion-004,1H22,E10,1,A,1,34,NAG:2,ready_for_policy_review,other non-polymeric components require an explicit retention policy
+expansion-005,1KZK,JE2,1,A;B,1,41,CL:5;EDO:5,ready_for_policy_review,other non-polymeric components require an explicit retention policy
+expansion-006,1MZC,BNE,1,A;B,1,35,FPP:1;FRU:1;GLC:1;ZN:1,ready_for_policy_review,other non-polymeric components require an explicit retention policy
+expansion-007,1N1M,A3M,1,A;B,2,12;12,BMA:2;FUC:3;HG:4;MAN:1;NAG:21;NDG:3,ready_for_policy_review,other non-polymeric components require an explicit retention policy
+expansion-008,1R55,097,1,A,1,23,CA:1;CL:2;MAN:3;NAG:2;ZN:1,ready_for_policy_review,other non-polymeric components require an explicit retention policy
