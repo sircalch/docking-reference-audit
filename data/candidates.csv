@@ -1,1 +1,9 @@
 case_id,pdb_id,ligand_component_id,receptor_chains,candidate_source_url,selection_rationale,registered_at_utc,status,exclusion_reason
+pilot-001,1STP,BTN,,https://data.rcsb.org/rest/v1/core/entry/1STP,Public protein-small-molecule complex; pilot diversity set,2026-08-12T06:49:00Z,candidate,
+pilot-002,1HVR,XK2,,https://data.rcsb.org/rest/v1/core/entry/1HVR,Public protein-small-molecule complex; pilot diversity set,2026-08-12T06:49:00Z,candidate,
+pilot-003,1IEP,STI,,https://data.rcsb.org/rest/v1/core/entry/1IEP,Public protein-small-molecule complex; pilot diversity set,2026-08-12T06:49:00Z,candidate,
+pilot-004,1FPU,PRC,,https://data.rcsb.org/rest/v1/core/entry/1FPU,Public protein-small-molecule complex; pilot diversity set,2026-08-12T06:49:00Z,candidate,
+pilot-005,2P16,GG2,,https://data.rcsb.org/rest/v1/core/entry/2P16,Public protein-small-molecule complex; pilot diversity set,2026-08-12T06:49:00Z,candidate,
+pilot-006,3PTB,BEN,,https://data.rcsb.org/rest/v1/core/entry/3PTB,Public protein-small-molecule complex; pilot diversity set,2026-08-12T06:49:00Z,candidate,
+pilot-007,3D4Q,SM5,,https://data.rcsb.org/rest/v1/core/entry/3D4Q,Public protein-small-molecule complex; pilot diversity set,2026-08-12T06:49:00Z,candidate,
+pilot-008,3CJO,K30,,https://data.rcsb.org/rest/v1/core/entry/3CJO,Public protein-small-molecule complex; pilot diversity set,2026-08-12T06:49:00Z,candidate,

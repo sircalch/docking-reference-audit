@@ -1,0 +1,3 @@
+screened_at_utc,pdb_id,decision,reason,source_url
+2026-08-12T06:49:00Z,1A30,rejected,No non-polymeric entity listed in current RCSB entry metadata; cannot define a small-molecule reference ligand.,https://data.rcsb.org/rest/v1/core/entry/1A30
+2026-08-12T06:49:00Z,1BRC,rejected,No non-polymeric entity listed in current RCSB entry metadata; cannot define a small-molecule reference ligand.,https://data.rcsb.org/rest/v1/core/entry/1BRC
