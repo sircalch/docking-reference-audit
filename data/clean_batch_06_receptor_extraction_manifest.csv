@@ -1,0 +1,2 @@
+case_id,pdb_id,receptor_chain,source_path,source_sha256,output_path,output_sha256,output_bytes,operations,created_at_utc
+expansion-015,1NWZ,A,raw/structures/expansion-015_1NWZ.cif,0d35eaf5bcfcc294720fb6248f438d82bb2ce9f6c703d9b097f587a9585f6051,derived/strict-receptors/expansion-015_1NWZ_chain-A_strict.pdb,92f6e62ffe909d7cf8960c0971f4287da44ce2089cd84b1f2f0f4deeead2ca14,189584,select declared chain; remove other chains; remove ligands and waters; no repair/altloc selection,2026-08-12T22:39:36.136696Z
