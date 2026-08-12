@@ -1,0 +1,9 @@
+case_id,pdb_id,declared_ligand,proposed_ligand_instance,proposed_receptor_chain,closest_contact_angstrom,water_policy,other_nonpolymer_components,other_components_policy,selection_rule,status
+pilot-001,1STP,BTN,A:BTN:300,A,2.585,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+pilot-002,1HVR,XK2,A:XK2:263,A,2.209,remove_all_waters_pending_review,CSO:2,manual_review_required,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+pilot-003,1IEP,STI,A:STI:201,A,2.668,remove_all_waters_pending_review,CL:6,manual_review_required,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+pilot-004,1FPU,PRC,A:PRC:1,A,2.891,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+pilot-005,2P16,GG2,A:GG2:298,A,2.852,remove_all_waters_pending_review,CA:1,manual_review_required,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+pilot-006,3PTB,BEN,A:BEN:1,A,2.815,remove_all_waters_pending_review,CA:1,manual_review_required,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+pilot-007,3D4Q,SM5,A:SM5:1,A,2.085,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+pilot-008,3CJO,K30,B:K30:603,B,2.268,remove_all_waters_pending_review,ADP:2;MG:2,manual_review_required,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
