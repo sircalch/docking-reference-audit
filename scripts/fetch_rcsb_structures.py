@@ -39,6 +39,27 @@ def load_candidates(path: Path) -> list[dict[str, str]]:
         return [row for row in csv.DictReader(handle) if row.get("status") == "candidate"]
 
 
+def load_existing_manifest(path: Path) -> dict[str, dict[str, str]]:
+    if not path.exists():
+        return {}
+    with path.open(newline="", encoding="utf-8") as handle:
+        return {row["case_id"]: row for row in csv.DictReader(handle)}
+
+
+def verified_cached_row(
+    candidate: dict[str, str], destination: Path, existing: dict[str, str] | None
+) -> dict[str, str] | None:
+    """Return an unchanged prior record only when its local bytes still match."""
+    if not existing or existing.get("status") != "retrieved" or not destination.exists():
+        return None
+    if existing.get("pdb_id", "").upper() != candidate["pdb_id"].upper():
+        return None
+    digest = hashlib.sha256(destination.read_bytes()).hexdigest()
+    if digest != existing.get("sha256"):
+        return None
+    return {field: existing.get(field, "") for field in MANIFEST_FIELDS}
+
+
 def download_mmcif(pdb_id: str) -> bytes:
     source_url = f"{FILES_ROOT}/{pdb_id.upper()}.cif"
     request = Request(source_url, headers={"User-Agent": USER_AGENT, "Accept": "chemical/x-cif,text/plain"})
@@ -64,11 +85,17 @@ def main() -> int:
     parser.add_argument("--manifest", type=Path, default=Path("data/retrieval_manifest.csv"))
     args = parser.parse_args()
 
+    existing_rows = load_existing_manifest(args.manifest)
     rows: list[dict[str, str]] = []
     for candidate in load_candidates(args.candidates):
         pdb_id = candidate["pdb_id"].upper()
         destination = args.raw_dir / f"{candidate['case_id']}_{pdb_id}.cif"
         source_url = f"{FILES_ROOT}/{pdb_id}.cif"
+        cached = verified_cached_row(candidate, destination, existing_rows.get(candidate["case_id"]))
+        if cached:
+            rows.append(cached)
+            print(f"{candidate['case_id']} {pdb_id} -> verified cached {destination}")
+            continue
         retrieved_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
         row = {
             "case_id": candidate["case_id"],

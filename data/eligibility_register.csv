@@ -15,3 +15,5 @@ expansion-005,1KZK,JE2,contextual,2 polymer chains; other components: CL:5;EDO:5
 expansion-006,1MZC,BNE,contextual,2 polymer chains; other components: FPP:1;FRU:1;GLC:1;ZN:1,not_run_by_this_register
 expansion-007,1N1M,A3M,contextual,2 polymer chains; 2 declared ligand instances; other components: BMA:2;FUC:3;HG:4;MAN:1;NAG:21;NDG:3,not_run_by_this_register
 expansion-008,1R55,097,contextual,other components: CA:1;CL:2;MAN:3;NAG:2;ZN:1,not_run_by_this_register
+expansion-009,9CY0,A1A55,contextual,2 polymer chains; 2 declared ligand instances,not_run_by_this_register
+expansion-010,6FMC,DUE,clean,one polymer chain; one declared ligand instance; no other non-polymeric components,not_run_by_this_register

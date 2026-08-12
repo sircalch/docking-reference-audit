@@ -73,7 +73,9 @@ def main() -> int:
         succeeded = run.returncode == 0 and output.exists()
         combined_output = f"{run.stdout}\n{run.stderr}"
         error_class = ""
-        if not succeeded and "Template matching failed" in combined_output:
+        if not succeeded and "Residues with alternate location" in combined_output:
+            error_class = "meeko_alternate_location_requires_choice"
+        elif not succeeded and "Template matching failed" in combined_output:
             error_class = "meeko_template_matching_failed"
         elif not succeeded:
             error_class = "meeko_preparation_failed"
