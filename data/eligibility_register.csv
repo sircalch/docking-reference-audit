@@ -17,3 +17,5 @@ expansion-007,1N1M,A3M,contextual,2 polymer chains; 2 declared ligand instances;
 expansion-008,1R55,097,contextual,other components: CA:1;CL:2;MAN:3;NAG:2;ZN:1,not_run_by_this_register
 expansion-009,9CY0,A1A55,contextual,2 polymer chains; 2 declared ligand instances,not_run_by_this_register
 expansion-010,6FMC,DUE,clean,one polymer chain; one declared ligand instance; no other non-polymeric components,not_run_by_this_register
+expansion-011,7G0Z,WMB,clean,one polymer chain; one declared ligand instance; no other non-polymeric components,not_run_by_this_register
+expansion-012,7AOT,RTQ,clean,one polymer chain; one declared ligand instance; no other non-polymeric components,not_run_by_this_register

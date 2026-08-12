@@ -1,6 +1,8 @@
 # Docking Reference Audit
 
-**Estado:** protocolo y estructura inicial; sin resultados ni conclusiones científicas.
+**Estado:** auditoría estructural y subpilotos estrictos en curso; resultados
+descriptivos reproducibles, sin conclusiones de rendimiento, afinidad o
+actividad biológica.
 
 Proyecto independiente para construir un conjunto curado de complejos proteína–ligando de acceso público y auditar su preparación para campañas de redocking reproducibles. No utiliza entradas, estructuras ni resultados del proyecto doctoral.
 
@@ -16,7 +18,7 @@ Proyecto independiente para construir un conjunto curado de complejos proteína�
 - figuras y tablas generadas desde los manifiestos;
 - depósito reproducible (repositorio + Zenodo) antes de cualquier manuscrito.
 
-El objetivo no es afirmar que una herramienta es superior ni extrapolar eficacia farmacológica. Los resultados serán descriptivos y reproducibles, limitados a los casos que cumplan el protocolo.
+El objetivo no es afirmar que una herramienta es superior ni extrapolar eficacia farmacológica. Los resultados son descriptivos y reproducibles, limitados a los casos que cumplan el protocolo. Las preparaciones rechazadas bajo una política congelada también se conservan como resultados.
 
 ## Estructura
 
@@ -36,3 +38,4 @@ Las estructuras y sus metadatos se recuperarán exclusivamente desde RCSB PDB/ww
 No se incorporará a un resultado un número, pose, clasificación o figura que no pueda regenerarse desde los archivos y scripts versionados. Las exclusiones son resultados válidos y se conservarán.
 
 Consulte [el protocolo inicial](protocol/PROTOCOL-v0.1.md) antes de añadir casos.
+La expansión controlada se describe en [EXPANSION-PLAN-v0.1.md](protocol/EXPANSION-PLAN-v0.1.md); los resultados actuales del subpiloto están en [SUBPILOT-RESULTS-v0.1.md](reports/SUBPILOT-RESULTS-v0.1.md).

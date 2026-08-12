@@ -17,3 +17,5 @@ expansion-007,1N1M,A3M,,https://data.rcsb.org/rest/v1/core/entry/1N1M,Public DPP
 expansion-008,1R55,097,,https://data.rcsb.org/rest/v1/core/entry/1R55,Public metalloprotease-small-molecule complex; contextual expansion candidate,2026-08-12T07:30:00Z,candidate,
 expansion-009,9CY0,A1A55,,https://data.rcsb.org/rest/v1/core/entry/9CY0,Public X-ray SARS-CoV-2 NSP3 macrodomain-inhibitor complex (0.8 A); one RCSB non-polymer entity before coordinate inventory,2026-08-12T21:12:26Z,candidate,
 expansion-010,6FMC,DUE,,https://data.rcsb.org/rest/v1/core/entry/6FMC,Public X-ray neuropilin-1 inhibitor complex (0.9 A); one RCSB non-polymer entity before coordinate inventory,2026-08-12T21:12:26Z,candidate,
+expansion-011,7G0Z,WMB,,https://data.rcsb.org/rest/v1/core/entry/7G0Z,Public X-ray FABP4 inhibitor complex (0.84 A); one RCSB non-polymer entity before coordinate inventory,2026-08-12T21:19:09Z,candidate,
+expansion-012,7AOT,RTQ,,https://data.rcsb.org/rest/v1/core/entry/7AOT,Public X-ray FKBP51 macrocyclic ligand complex; rank 67 in frozen clean-discovery query and RCSB annotates RTQ as subject of investigation,2026-08-12T21:23:34Z,candidate,

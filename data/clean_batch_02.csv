@@ -1,0 +1,2 @@
+case_id,pdb_id,receptor_chain,reference_ligand_instance,status,policy_basis
+expansion-011,7G0Z,A,A:WMB:201,accepted,one model; one polymer chain; one declared ligand instance; no additional non-polymeric components; remove all waters and the declared ligand after chain selection

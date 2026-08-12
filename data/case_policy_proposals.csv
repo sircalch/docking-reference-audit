@@ -17,3 +17,5 @@ expansion-007,1N1M,A3M,B:A3M:955,B,2.558,remove_all_waters_pending_review,BMA:2;
 expansion-008,1R55,097,A:097:518,A,2.784,remove_all_waters_pending_review,CA:1;CL:2;MAN:3;NAG:2;ZN:1,manual_review_required,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
 expansion-009,9CY0,A1A55,B:A1A55:201,B,0.416,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
 expansion-010,6FMC,DUE,A:DUE:501,A,2.627,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+expansion-011,7G0Z,WMB,A:WMB:201,A,1.869,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+expansion-012,7AOT,RTQ,A:RTQ:201,A,1.988,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
