@@ -1,0 +1,4 @@
+case_id,pdb_id,receptor_chain,reference_ligand_instance,status
+pilot-001,1STP,A,A:BTN:300,accepted
+pilot-004,1FPU,A,A:PRC:1,accepted
+pilot-007,3D4Q,A,A:SM5:1,accepted
