@@ -1,0 +1,16 @@
+# Retrieved structures and derived scientific outputs are retained locally until
+# they have a documented manifest and an explicit release decision.
+raw/
+derived/
+reports/generated/
+
+# Local environments and caches
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# OS/editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
