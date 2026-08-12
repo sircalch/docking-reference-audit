@@ -35,6 +35,8 @@ The machine-readable evidence is deliberately kept in the following files:
   and SHA-256 for each original mmCIF;
 - `data/structure_inventory.csv`: frozen counts of models, polymer chains,
   ligand instances, and other non-polymeric components;
+- `data/eligibility_register.csv`: mechanical clean/contextual classification
+  from the frozen inventory; it is not an execution result;
 - `data/case_policy_proposals.csv`: deterministic ligand/receptor proximity
   proposal, marked `proposal_pending_researcher_review`.
 

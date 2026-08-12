@@ -1,0 +1,17 @@
+case_id,pdb_id,ligand_component_id,stratum,classification_reason,execution_status
+pilot-001,1STP,BTN,clean,one polymer chain; one declared ligand instance; no other non-polymeric components,completed_reference_pose_existing_subpilot
+pilot-002,1HVR,XK2,contextual,2 polymer chains; other components: CSO:2,not_run_by_this_register
+pilot-003,1IEP,STI,contextual,2 polymer chains; 2 declared ligand instances; other components: CL:6,not_run_by_this_register
+pilot-004,1FPU,PRC,contextual,2 polymer chains; 2 declared ligand instances,not_run_by_this_register
+pilot-005,2P16,GG2,contextual,2 polymer chains; other components: CA:1,not_run_by_this_register
+pilot-006,3PTB,BEN,contextual,other components: CA:1,not_run_by_this_register
+pilot-007,3D4Q,SM5,contextual,2 polymer chains; 2 declared ligand instances,completed_reference_pose_existing_subpilot
+pilot-008,3CJO,K30,contextual,2 polymer chains; 2 declared ligand instances; other components: ADP:2;MG:2,not_run_by_this_register
+expansion-001,1B9V,RA2,contextual,other components: CA:2;NAG:1,not_run_by_this_register
+expansion-002,1CDE,DZF,contextual,4 polymer chains; 4 declared ligand instances; other components: GAR:4,not_run_by_this_register
+expansion-003,1E66,HUX,contextual,other components: NAG:2,not_run_by_this_register
+expansion-004,1H22,E10,contextual,other components: NAG:2,not_run_by_this_register
+expansion-005,1KZK,JE2,contextual,2 polymer chains; other components: CL:5;EDO:5,not_run_by_this_register
+expansion-006,1MZC,BNE,contextual,2 polymer chains; other components: FPP:1;FRU:1;GLC:1;ZN:1,not_run_by_this_register
+expansion-007,1N1M,A3M,contextual,2 polymer chains; 2 declared ligand instances; other components: BMA:2;FUC:3;HG:4;MAN:1;NAG:21;NDG:3,not_run_by_this_register
+expansion-008,1R55,097,contextual,other components: CA:1;CL:2;MAN:3;NAG:2;ZN:1,not_run_by_this_register
