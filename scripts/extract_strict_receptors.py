@@ -27,6 +27,31 @@ def load_subpilot(path: Path) -> list[dict[str, str]]:
         return [row for row in csv.DictReader(handle) if row.get("status") == "accepted"]
 
 
+def parse_ligand_name(reference_ligand_instance: str) -> str:
+    # Format is "<chain>:<component>:<auth_seq_id>", e.g. "B:K30:603".
+    parts = reference_ligand_instance.split(":")
+    if len(parts) != 3:
+        raise ValueError(f"unexpected reference_ligand_instance format: {reference_ligand_instance!r}")
+    return parts[1]
+
+
+def strip_ligand_and_water(chain: "gemmi.Chain", ligand_name: str, retained_components: set[str]) -> None:
+    # Declared policy: always remove water and the declared reference ligand.
+    # Any other non-polymer component is removed unless explicitly retained by
+    # a per-case policy (e.g. a covalently bound or physiological cofactor
+    # unrelated to the docked ligand). Standard polymer residues (het_flag "A")
+    # are never touched. This must not repair, delete polymer residues, or
+    # choose an alternate location.
+    to_delete = [
+        index
+        for index, residue in enumerate(chain)
+        if residue.is_water()
+        or (residue.het_flag != "A" and residue.name not in retained_components)
+    ]
+    for index in reversed(to_delete):
+        del chain[index]
+
+
 def extract(row: dict[str, str], raw_dir: Path, output_dir: Path) -> dict[str, str]:
     pdb_id = row["pdb_id"].upper()
     source = raw_dir / f"{row['case_id']}_{pdb_id}.cif"
@@ -39,9 +64,24 @@ def extract(row: dict[str, str], raw_dir: Path, output_dir: Path) -> dict[str, s
         raise ValueError(f"{pdb_id}: selected receptor chain {chain_name} is absent")
     for name in [chain.name for chain in model if chain.name != chain_name]:
         model.remove_chain(name)
-    # The clean-case policy declares no retained non-polymeric components.
-    # This removes water and all ligands after the selected receptor chain is fixed.
-    model.remove_ligands_and_waters()
+    retained_components = {
+        component.strip().upper()
+        for component in row.get("retained_components", "").split(";")
+        if component.strip()
+    }
+    if retained_components:
+        ligand_name = parse_ligand_name(row["reference_ligand_instance"])
+        strip_ligand_and_water(model.find_chain(chain_name), ligand_name, retained_components)
+        operations = (
+            "select declared chain; remove other chains; remove water and declared ligand; "
+            f"retain declared non-polymer components ({', '.join(sorted(retained_components))}); "
+            "no repair/altloc selection/residue deletion"
+        )
+    else:
+        # The clean-case policy declares no retained non-polymeric components.
+        # This removes water and all ligands after the selected receptor chain is fixed.
+        model.remove_ligands_and_waters()
+        operations = "select declared chain; remove other chains; remove ligands and waters; no repair/altloc selection"
     output_dir.mkdir(parents=True, exist_ok=True)
     output = output_dir / f"{row['case_id']}_{pdb_id}_chain-{chain_name}_strict.pdb"
     structure.write_pdb(str(output))
@@ -54,7 +94,7 @@ def extract(row: dict[str, str], raw_dir: Path, output_dir: Path) -> dict[str, s
         "output_path": output.as_posix(),
         "output_sha256": sha256(output),
         "output_bytes": str(output.stat().st_size),
-        "operations": "select declared chain; remove other chains; remove ligands and waters; no repair/altloc selection",
+        "operations": operations,
         "created_at_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
     }
 

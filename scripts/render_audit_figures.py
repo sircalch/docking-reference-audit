@@ -221,11 +221,13 @@ def main() -> int:
     candidates = read_rows(args.data_dir / "candidates.csv")
     retrieval = read_rows(args.data_dir / "retrieval_manifest.csv")
     preparation = read_rows(args.data_dir / "strict_preparation_manifest.csv")
-    for manifest in sorted(args.data_dir.glob("clean_batch_*_preparation_manifest.csv")):
+    for manifest in sorted(args.data_dir.glob("clean_batch_[0-9][0-9]_preparation_manifest.csv")):
         preparation.extend(read_rows(manifest))
-    for manifest in sorted(args.data_dir.glob("contextual_batch_*_preparation_manifest.csv")):
+    for manifest in sorted(args.data_dir.glob("contextual_batch_[0-9][0-9]_preparation_manifest.csv")):
         preparation.extend(read_rows(manifest))
     rmsd = read_rows(args.data_dir / "reference_pose_rmsd.csv")
+    for manifest in sorted(args.data_dir.glob("contextual_batch_[0-9][0-9]_reference_pose_rmsd.csv")):
+        rmsd.extend(read_rows(manifest))
     inventory_disposition(inventory, args.output_dir)
     preparation_outcomes(preparation, args.output_dir)
     pose_recovery(rmsd, args.output_dir)

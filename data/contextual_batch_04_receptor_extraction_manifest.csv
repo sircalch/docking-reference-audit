@@ -1,0 +1,2 @@
+case_id,pdb_id,receptor_chain,source_path,source_sha256,output_path,output_sha256,output_bytes,operations,created_at_utc
+pilot-008,3CJO,B,raw/structures/pilot-008_3CJO.cif,94f8d6c475d6533d39cc2cd7241cc557af2eb058cd3da0495eb98abd77d9e705,derived/strict-receptors/pilot-008_3CJO_chain-B_strict.pdb,a33f347bf9c37ac4d43f51c528ea0207dbc16786e8ba78414252f10fc9ae5a91,226156,"select declared chain; remove other chains; remove water and declared ligand; retain declared non-polymer components (ADP, MG); no repair/altloc selection/residue deletion",2026-08-13T23:31:55.179877Z

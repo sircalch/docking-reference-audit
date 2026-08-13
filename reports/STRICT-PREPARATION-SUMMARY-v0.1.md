@@ -28,11 +28,13 @@ or alternative preparation policies.
 | expansion-009 | 9CY0 | contextual batch 01 | failed | `meeko_alternate_location_requires_choice` |
 | expansion-021 | 2BT9 | contextual batch 02 | failed | `meeko_alternate_location_requires_choice` |
 | expansion-019 | 9HOO | contextual batch 03 | failed | `meeko_alternate_location_requires_choice` |
+| pilot-008 | 3CJO | contextual batch 04 | prepared | — |
 
-Across these seventeen strict attempts, two receptors prepared and fifteen
-were rejected. The two prepared original-subpilot receptors are the only
-cases that proceeded to the already recorded reference-pose runs; no new
-docking run is implied by this summary.
+Across these eighteen strict attempts, three receptors prepared and fifteen
+were rejected. The two original-subpilot receptors (pilot-001, pilot-007)
+proceeded to the already recorded reference-pose runs; the third prepared
+receptor, pilot-008 (3CJO), is a new completed reference-pose case this
+round — see below.
 
 Fourteen of the fifteen rejections carry an alternate-location component. The
 three additions from the final clean-registration round (5HBS, 4XXG, 6TE2)
@@ -72,15 +74,36 @@ retained at residue 304, zero U5P/HOH coordinate lines). expansion-019 still
 failed strict preparation, again on the pure alternate-location class (96
 flagged residues in this 0.83 A structure).
 
-This extends, rather than contradicts, the pattern already observed: opening
-the contextual route did not raise the strict-preparation success rate in
-these three additional attempts, and the true source of the earlier "extra
-non-polymer component" flag on 9HOO was a labeling artifact of HETATM
-records, not a genuine free ligand requiring a stripping policy.
+Finally, pilot-008 (3CJO, "KSP in complex with inhibitor 30") was processed
+under a fourth kind of contextual policy: rather than stripping every
+non-declared non-polymer component, the extraction script was extended
+(`retained_components` column, `scripts/extract_strict_receptors.py`) to
+retain named components on an explicit, chemically justified basis. 3CJO
+has two other non-polymer components, ADP and MG, which are the
+physiological KSP/Eg5 nucleotide cofactor bound at its own well-characterized
+motor-domain site, distinct from the allosteric K30 inhibitor pocket. These
+were retained rather than removed — stripping a resolved physiological
+cofactor would alter pocket chemistry beyond a no-repair policy's intent —
+and only water and the declared ligand K30 were removed. This was verified
+empirically by inspecting the extracted receptor PDB (27 ADP atoms and the MG
+ion retained, zero K30/HOH atoms). Strict preparation **succeeded**: the
+third prepared receptor in the audit. Docking and reference-pose RMSD were
+then completed for this case; see
+`reports/CONTEXTUAL-BATCH-04-RESULTS-v0.1.md` and the updated
+`reports/AUDIT-SYNTHESIS-v0.1.md` for the full result.
 
-The observation stays descriptive of this seventeen-case sample and is not a
-general claim about resolution, chain multiplicity, or preparation
-compatibility.
+Opening the contextual route therefore produced one net new reference-pose
+case (pilot-008) alongside three further failures (9CY0, 2BT9, 9HOO) that
+extend, rather than contradict, the pattern already observed for the clean
+stratum: the overall strict-preparation success rate remains low (3 of 18,
+17%), still dominated by alternate-location incompatibility (14 of 15
+failures), and the earlier "extra non-polymer component" flag on 9HOO was
+found to be a labeling artifact of HETATM records rather than a genuine free
+ligand.
+
+The observation stays descriptive of this eighteen-case sample and is not a
+general claim about resolution, chain multiplicity, cofactor retention, or
+preparation compatibility.
 
 ## Interpretation boundary
 
@@ -107,4 +130,6 @@ post hoc.
 - `data/clean_batch_11_preparation_manifest.csv`;
 - `data/contextual_batch_01_preparation_manifest.csv`;
 - `data/contextual_batch_02_preparation_manifest.csv`;
-- `data/contextual_batch_03_preparation_manifest.csv`.
+- `data/contextual_batch_03_preparation_manifest.csv`;
+- `data/contextual_batch_04_preparation_manifest.csv` (see also
+  `reports/CONTEXTUAL-BATCH-04-RESULTS-v0.1.md` for the full docking result).

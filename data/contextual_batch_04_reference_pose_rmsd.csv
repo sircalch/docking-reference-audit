@@ -1,0 +1,10 @@
+case_id,pdb_id,component_id,mode,affinity_kcal_mol,experimental_reference_heavy_atom_rmsd_angstrom,mapping_status,mapping_note
+pilot-008,3CJO,K30,1,-10.89,1.504106,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+pilot-008,3CJO,K30,2,-10.71,1.153570,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+pilot-008,3CJO,K30,3,-10.1,1.795993,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+pilot-008,3CJO,K30,4,-9.803,1.284020,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+pilot-008,3CJO,K30,5,-9.761,1.676545,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+pilot-008,3CJO,K30,6,-9.577,2.266451,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+pilot-008,3CJO,K30,7,-9.05,2.217842,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+pilot-008,3CJO,K30,8,-8.722,2.134413,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+pilot-008,3CJO,K30,9,-8.509,1.626226,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
