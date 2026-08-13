@@ -24,3 +24,8 @@ expansion-014,6Q7D,HOT,A:HOT:1001,A,2.866,remove_all_waters_pending_review,,none
 expansion-015,1NWZ,HC4,A:HC4:169,A,1.773,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
 expansion-016,1X8Q,HEM,A:HEM:201,A,1.942,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
 expansion-017,4X5P,3XJ,A:3XJ:301,A,1.636,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+expansion-018,5HBS,RTL,A:RTL:201,A,1.929,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+expansion-019,9HOO,U5P,A:U5P:501,A,1.854,remove_all_waters_pending_review,CSS:1,manual_review_required,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+expansion-020,4XXG,FAD,A:FAD:601,A,1.770,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+expansion-021,2BT9,MFU,C:MFU:1091,C,2.595,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
+expansion-022,6TE2,N4N,A:N4N:401,A,1.922,remove_all_waters_pending_review,,none_detected,minimum original-coordinate ligand-to-polymer atom distance; lexical tie-break,proposal_pending_researcher_review
