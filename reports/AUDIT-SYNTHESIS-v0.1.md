@@ -55,10 +55,12 @@ from RCSB (`data/retrieval_manifest.csv`). Structural classification
 | contextual | 18 |
 | review required | 0 |
 
-All 12 clean cases were carried through strict receptor preparation. None of
-the 18 contextual cases have been processed: no case-specific policy has yet
-been declared for any of them, and none may be processed without one under
-protocol v0.1.
+All 12 clean cases were carried through strict receptor preparation. Of the
+18 contextual cases, two (expansion-009/9CY0 and expansion-021/2BT9) have
+since been assigned an explicit, auditable receptor-chain and ligand-instance
+policy and processed; the remaining 16, including expansion-019/9HOO (whose
+extra non-polymer component would require an extraction-script change not
+yet made), have no declared policy and have not been processed.
 
 ## Strict receptor preparation
 
@@ -66,23 +68,31 @@ Every clean case was extracted (`scripts/extract_strict_receptors.py`, fixed
 policy: single declared chain, all waters and the declared ligand removed)
 and passed to Meeko 0.7.1 (`scripts/run_strict_meeko_preparation.py`) with no
 alternate-location choice, no repair, no residue deletion, no template
-addition, and `--allow_bad_res` never enabled.
+addition, and `--allow_bad_res` never enabled. The two processed contextual
+cases used the same extraction and preparation pipeline; their receptor chain
+and ligand instance were selected by the minimum original-coordinate
+ligand-to-polymer atom distance, computed by
+`scripts/propose_case_policies.py`, rather than an arbitrary default chain.
 
 | Outcome | Count |
 | --- | ---: |
 | prepared | 2 |
-| failed | 12 |
+| failed | 14 |
 
 | Failure class | Count |
 | --- | ---: |
-| `meeko_alternate_location_requires_choice` | 7 |
+| `meeko_alternate_location_requires_choice` | 9 |
 | `meeko_alternate_location_and_template_matching_failed` | 4 |
 | `meeko_template_matching_failed` | 1 |
 
-Eleven of the twelve failures (92%) involve an alternate-location component.
-A rejection under this policy is a recorded audit outcome, not evidence that
-the underlying PDB entry is defective; it reflects incompatibility with one
-specific no-repair preparation choice.
+Thirteen of the fourteen failures (93%) involve an alternate-location
+component. A rejection under this policy is a recorded audit outcome, not
+evidence that the underlying PDB entry is defective; it reflects
+incompatibility with one specific no-repair preparation choice. Opening the
+contextual route did not raise the strict-preparation success rate in these
+two additional attempts: both failed on the pure alternate-location class,
+matching the dominant failure mode already observed across the clean
+stratum.
 
 **Observation on resolution.** Candidates in this registry were drawn
 disproportionately from the sub-1-angstrom stratum of the frozen
@@ -127,11 +137,14 @@ preparation policies.
 
 ## What this audit does not yet cover
 
-- **18 contextual candidates remain unprocessed.** No case-specific
-  chain/cofactor/water policy has been declared for any of them. This is the
-  only route left open by protocol v0.1 to add reference-pose cases beyond
-  the current two, since the clean stratum of the 30-candidate registry is
-  now fully processed (12/12).
+- **16 of 18 contextual candidates remain unprocessed.** Two
+  (expansion-009/9CY0, expansion-021/2BT9) were processed this round under an
+  explicit chain/ligand-instance policy and both failed strict preparation
+  (`meeko_alternate_location_requires_choice`), so the completed
+  reference-pose count is still two. The other 16, including
+  expansion-019/9HOO, have no declared policy; 9HOO specifically needs an
+  extraction-script change (removal of a declared non-polymer component
+  beyond the fixed ligand-and-water policy) that has not been made.
 - **No independent reproduction.** No one has re-run the full pipeline from
   an empty checkout to confirm it reproduces 30 candidates → 14 strict
   attempts → 2 successes deterministically end to end.

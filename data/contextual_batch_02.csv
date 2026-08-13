@@ -1,0 +1,2 @@
+case_id,pdb_id,receptor_chain,reference_ligand_instance,status,policy_basis
+expansion-021,2BT9,C,C:MFU:1091,accepted,three polymer chains and six declared ligand instances; no other non-polymeric components; receptor chain and ligand instance selected by minimum original-coordinate ligand-to-polymer atom distance (2.595 A) per scripts/propose_case_policies.py; remove all waters and the declared ligand after chain selection

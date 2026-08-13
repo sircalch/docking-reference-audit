@@ -223,6 +223,8 @@ def main() -> int:
     preparation = read_rows(args.data_dir / "strict_preparation_manifest.csv")
     for manifest in sorted(args.data_dir.glob("clean_batch_*_preparation_manifest.csv")):
         preparation.extend(read_rows(manifest))
+    for manifest in sorted(args.data_dir.glob("contextual_batch_*_preparation_manifest.csv")):
+        preparation.extend(read_rows(manifest))
     rmsd = read_rows(args.data_dir / "reference_pose_rmsd.csv")
     inventory_disposition(inventory, args.output_dir)
     preparation_outcomes(preparation, args.output_dir)
