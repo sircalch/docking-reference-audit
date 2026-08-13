@@ -56,11 +56,14 @@ from RCSB (`data/retrieval_manifest.csv`). Structural classification
 | review required | 0 |
 
 All 12 clean cases were carried through strict receptor preparation. Of the
-18 contextual cases, two (expansion-009/9CY0 and expansion-021/2BT9) have
-since been assigned an explicit, auditable receptor-chain and ligand-instance
-policy and processed; the remaining 16, including expansion-019/9HOO (whose
-extra non-polymer component would require an extraction-script change not
-yet made), have no declared policy and have not been processed.
+18 contextual cases, three have since been assigned an explicit, auditable
+policy and processed: expansion-009/9CY0 and expansion-021/2BT9 (multi-chain,
+multi-instance, receptor chain and ligand instance selected by minimum
+ligand-to-polymer contact distance), and expansion-019/9HOO, whose flagged
+"extra non-polymer component" (CSS) was investigated and found to be a
+covalently modified in-chain residue rather than a free ligand — see
+"Strict receptor preparation" below. The remaining 15 contextual cases have
+no declared policy and have not been processed.
 
 ## Strict receptor preparation
 
@@ -68,30 +71,41 @@ Every clean case was extracted (`scripts/extract_strict_receptors.py`, fixed
 policy: single declared chain, all waters and the declared ligand removed)
 and passed to Meeko 0.7.1 (`scripts/run_strict_meeko_preparation.py`) with no
 alternate-location choice, no repair, no residue deletion, no template
-addition, and `--allow_bad_res` never enabled. The two processed contextual
-cases used the same extraction and preparation pipeline; their receptor chain
-and ligand instance were selected by the minimum original-coordinate
-ligand-to-polymer atom distance, computed by
+addition, and `--allow_bad_res` never enabled. The three processed contextual cases
+used the same extraction and preparation pipeline. For expansion-009 and
+expansion-021, receptor chain and ligand instance were selected by the
+minimum original-coordinate ligand-to-polymer atom distance, computed by
 `scripts/propose_case_policies.py`, rather than an arbitrary default chain.
+For expansion-019 (9HOO), the receptor-chain/ligand-instance selection used
+the same rule, and the flagged "other non-polymer component" CSS was
+investigated directly: it is a covalently modified residue (S-mercaptocysteine)
+at auth_seq_id 304 within chain A's own backbone (`covale` bonds to the
+flanking Lys303 and His305 in the deposited mmCIF), not a free ligand — it is
+only flagged as "non-polymer" because mmCIF records any non-standard residue
+as HETATM. The declared policy retained CSS as part of the receptor chain and
+removed only water and the declared ligand (U5P); this was confirmed by
+inspecting the extracted PDB directly rather than assumed (11 atoms retained
+at residue 304, zero U5P/HOH coordinate lines). No extraction-script change
+was required.
 
 | Outcome | Count |
 | --- | ---: |
 | prepared | 2 |
-| failed | 14 |
+| failed | 15 |
 
 | Failure class | Count |
 | --- | ---: |
-| `meeko_alternate_location_requires_choice` | 9 |
+| `meeko_alternate_location_requires_choice` | 10 |
 | `meeko_alternate_location_and_template_matching_failed` | 4 |
 | `meeko_template_matching_failed` | 1 |
 
-Thirteen of the fourteen failures (93%) involve an alternate-location
+Fourteen of the fifteen failures (93%) involve an alternate-location
 component. A rejection under this policy is a recorded audit outcome, not
 evidence that the underlying PDB entry is defective; it reflects
 incompatibility with one specific no-repair preparation choice. Opening the
 contextual route did not raise the strict-preparation success rate in these
-two additional attempts: both failed on the pure alternate-location class,
-matching the dominant failure mode already observed across the clean
+three additional attempts: all three failed on the pure alternate-location
+class, matching the dominant failure mode already observed across the clean
 stratum.
 
 **Observation on resolution.** Candidates in this registry were drawn
@@ -137,14 +151,13 @@ preparation policies.
 
 ## What this audit does not yet cover
 
-- **16 of 18 contextual candidates remain unprocessed.** Two
-  (expansion-009/9CY0, expansion-021/2BT9) were processed this round under an
-  explicit chain/ligand-instance policy and both failed strict preparation
+- **15 of 18 contextual candidates remain unprocessed.** Three
+  (expansion-009/9CY0, expansion-021/2BT9, expansion-019/9HOO) were processed
+  under an explicit, auditable policy and all three failed strict preparation
   (`meeko_alternate_location_requires_choice`), so the completed
-  reference-pose count is still two. The other 16, including
-  expansion-019/9HOO, have no declared policy; 9HOO specifically needs an
-  extraction-script change (removal of a declared non-polymer component
-  beyond the fixed ligand-and-water policy) that has not been made.
+  reference-pose count is still two. The other 15 have no declared policy;
+  most involve genuine free non-polymer components (ions, sugars, cofactors)
+  whose retention or removal has not yet been decided case by case.
 - **No independent reproduction.** No one has re-run the full pipeline from
   an empty checkout to confirm it reproduces 30 candidates → 14 strict
   attempts → 2 successes deterministically end to end.

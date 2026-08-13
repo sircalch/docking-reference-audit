@@ -27,13 +27,14 @@ or alternative preparation policies.
 | expansion-022 | 6TE2 | clean batch 11 | failed | `meeko_alternate_location_requires_choice` |
 | expansion-009 | 9CY0 | contextual batch 01 | failed | `meeko_alternate_location_requires_choice` |
 | expansion-021 | 2BT9 | contextual batch 02 | failed | `meeko_alternate_location_requires_choice` |
+| expansion-019 | 9HOO | contextual batch 03 | failed | `meeko_alternate_location_requires_choice` |
 
-Across these sixteen strict attempts, two receptors prepared and fourteen were
-rejected. The two prepared original-subpilot receptors are the only cases that
-proceeded to the already recorded reference-pose runs; no new docking run is
-implied by this summary.
+Across these seventeen strict attempts, two receptors prepared and fifteen
+were rejected. The two prepared original-subpilot receptors are the only
+cases that proceeded to the already recorded reference-pose runs; no new
+docking run is implied by this summary.
 
-Thirteen of the fourteen rejections carry an alternate-location component. The
+Fourteen of the fifteen rejections carry an alternate-location component. The
 three additions from the final clean-registration round (5HBS, 4XXG, 6TE2)
 were again selected from the same sub-1-angstrom stratum of the frozen
 clean-discovery ranking (0.89 A, 0.85 A, 0.922 A) and again all failed, two of
@@ -43,23 +44,41 @@ made earlier to find lower-resolution comparators (roughly 1.5-2.0 A) inside
 the frozen ranking did not succeed with reasonable manual sampling effort.
 
 With the clean stratum of the 30-candidate registry fully processed (twelve
-of twelve), this round opened the contextual stratum: expansion-009 (9CY0)
+of twelve), this round opened the contextual stratum. expansion-009 (9CY0)
 and expansion-021 (2BT9), both structurally complex only by having multiple
 polymer chains and multiple declared ligand instances with no other
 non-polymeric component, were assigned an auditable receptor-chain and
 ligand-instance policy computed by `scripts/propose_case_policies.py`
 (minimum original-coordinate ligand-to-polymer atom distance) and carried
 through the same frozen no-repair extraction and preparation pipeline used
-for every clean case. Both failed on the pure alternate-location class. This
-extends, rather than contradicts, the pattern already observed: opening the
-contextual route did not raise the strict-preparation success rate in these
-two additional attempts. One contextual case, expansion-019 (9HOO), remains
-unprocessed: its extra non-polymer component (CSS) would require the
-extraction script to remove a declared component beyond the fixed
-ligand-and-water policy, which is a script change not yet made and is
-recorded here as an open item rather than silently skipped.
+for every clean case. Both failed on the pure alternate-location class.
 
-The observation stays descriptive of this sixteen-case sample and is not a
+expansion-019 (9HOO) was then investigated directly rather than left
+unresolved: its flagged "other non-polymer component," CSS (S-mercaptocysteine,
+chem-comp type L-peptide linking), was inspected in the deposited mmCIF and
+found to be a covalently modified residue at auth_seq_id 304 within chain A
+itself — `covale` bonds link Lys303-C to Cys304-N and Cys304-C to His305-N,
+placing it inline in the polypeptide backbone, not a free ligand or cofactor.
+`audit_structure_inventory.py` flags it as "other" only because it carries a
+HETATM record, which is how mmCIF encodes any non-standard residue even when
+covalently part of the chain. The declared policy for this case therefore
+retains CSS as an intrinsic part of the receptor chain — removing it would be
+an undeclared residue deletion, which protocol v0.1 prohibits — and removes
+only water and the declared ligand (U5P), identical in spirit to every clean
+case. No extraction-script change was needed: gemmi's entity-aware
+`remove_ligands_and_waters()` already keeps CSS because it belongs to the
+polymer entity, confirmed by inspecting the extracted PDB directly (11 atoms
+retained at residue 304, zero U5P/HOH coordinate lines). expansion-019 still
+failed strict preparation, again on the pure alternate-location class (96
+flagged residues in this 0.83 A structure).
+
+This extends, rather than contradicts, the pattern already observed: opening
+the contextual route did not raise the strict-preparation success rate in
+these three additional attempts, and the true source of the earlier "extra
+non-polymer component" flag on 9HOO was a labeling artifact of HETATM
+records, not a genuine free ligand requiring a stripping policy.
+
+The observation stays descriptive of this seventeen-case sample and is not a
 general claim about resolution, chain multiplicity, or preparation
 compatibility.
 
@@ -87,4 +106,5 @@ post hoc.
 - `data/clean_batch_10_preparation_manifest.csv`;
 - `data/clean_batch_11_preparation_manifest.csv`;
 - `data/contextual_batch_01_preparation_manifest.csv`;
-- `data/contextual_batch_02_preparation_manifest.csv`.
+- `data/contextual_batch_02_preparation_manifest.csv`;
+- `data/contextual_batch_03_preparation_manifest.csv`.
