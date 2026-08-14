@@ -60,19 +60,54 @@ not silently:
 
 ## AI-use disclosure (required by JMM policy, drafted for Methods)
 
-JMM requires LLM use to be documented in the Methods section. The
-companion manuscript already includes a disclosure sentence for OpenAI
-Codex (GPT-5); this manuscript needs its own, accurate to what was
-actually used here:
+JMM requires LLM use to be documented in the Methods section. Confirmed
+final wording (2026-08-14), generic tool naming per the authors'
+preference:
 
-> "Claude (Anthropic) was used as computational assistance for pipeline
-> scripting, data analysis, and manuscript drafting. The human authors
-> reviewed the computational evidence, figures, references, and manuscript
-> material and remain responsible for the methods, interpretation, and
-> final submitted text."
+> "A large language model (LLM) was used as computational assistance for
+> pipeline scripting, data analysis, and manuscript drafting. The human
+> authors reviewed the computational evidence, figures, references, and
+> manuscript material and remain responsible for the methods,
+> interpretation, and final submitted text."
 
-This mirrors the companion manuscript's already-accepted phrasing pattern
-exactly (tool name swapped), rather than inventing new wording.
+This mirrors the companion manuscript's already-used phrasing pattern
+("computational assistance during software and document organization")
+rather than inventing new wording, generalized from "Claude (Anthropic)"
+to "a large language model (LLM)" as requested. It was deliberately kept
+calibrated to the actual scope of the work rather than minimized: the
+public repository (github.com/sircalch/docking-reference-audit) already
+carries a `Co-Authored-By: Claude` trailer with detailed technical
+descriptions on every commit touching scripts, analysis, or reports. A
+disclosure that understated that scope (e.g. describing it as only "data
+organization") would visibly contradict the public commit history any
+reviewer or reader can open — an inconsistency that is a real submission
+risk, unlike an accurate, calibrated disclosure. This was raised and
+resolved explicitly with the authors rather than silently adjusted.
+
+## Statements and Declarations (confirmed 2026-08-14)
+
+Placed after References, exact JMM-required heading "Statements and
+Declarations":
+
+**Funding**
+> "The authors declare that no funds, grants, or other support were
+> received during the preparation of this manuscript."
+
+**Competing Interests**
+> "The authors have no relevant financial or non-financial interests to
+> disclose."
+
+**Author Contributions** — still needs the specific per-author breakdown
+(who did what) from the authors; JMM's own example statement is a
+reasonable template ("All authors contributed to the study conception and
+design...").
+
+**Data Availability**
+> "The datasets, protocol, and scripts generated and analysed during the
+> current study are available in the docking-reference-audit repository,
+> https://github.com/sircalch/docking-reference-audit."
+Should be updated to the Zenodo DOI once a release is cut (see gap 5
+below).
 
 ## Working title (pick one)
 
@@ -372,14 +407,11 @@ matplotlib renders if desired before submission.
    OS/Meeko/Vina build (cross-environment reproducibility remains open).
 4. ~~Author list, affiliations, ORCID~~ **Done** — confirmed 2026-08-14, see
    "Authors" section above (same three authors and order as the companion
-   102-target manuscript). **Still outstanding: funding statement and
-   competing-interests statement** — not invented here; JMM requires both
-   explicitly under "Statements and Declarations" and returns incomplete
-   submissions that omit them. Ask the user directly: (a) any grant/funding
-   source to declare, or the standard "no funds, grants, or other support
-   were received" statement; (b) any competing interests, or the standard
-   "the authors have no relevant financial or non-financial interests to
-   disclose."
+   102-target manuscript). ~~Funding statement and competing-interests
+   statement.~~ **Done** — confirmed 2026-08-14 (no funding, no competing
+   interests), see "Statements and Declarations" section above. Author
+   Contributions still needs the per-author breakdown from the authors
+   themselves before submission.
 5. ~~Repository publication decision.~~ **Done** — created public at
    https://github.com/sircalch/docking-reference-audit (2026-08-14),
    containing `protocol/`, `data/`, `scripts/`, `reports/`, `manuscript/`;
@@ -395,11 +427,8 @@ matplotlib renders if desired before submission.
    "Confirmed journal requirements" above (structured abstract, LLM
    disclosure, Data Availability Statement, reference style, figure specs,
    Statements and Declarations section).
-7. **Draft the LLM-use disclosure sentence for Methods** (new, from
-   requirement 2 above) — factual, no more than 1-2 sentences, e.g. stating
-   that Claude (Anthropic) was used for pipeline scripting, data analysis,
-   and drafting under the user's direction and review, consistent with
-   JMM's authorship/LLM policy.
+7. ~~Draft the LLM-use disclosure sentence for Methods.~~ **Done** —
+   confirmed 2026-08-14, see "AI-use disclosure" section above.
 8. **Restructure the draft abstract into Context/Methods subheadings**
    (currently one flowing paragraph) and trim to 150-250 words.
 9. **Optional but valuable: 2-3 more contextual cases** processed under the
