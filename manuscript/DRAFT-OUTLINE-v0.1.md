@@ -8,6 +8,72 @@ as of commit `84d336d` (2026-08-13). Nothing here is invented to "fill space"
 — where a section needs more content, that is flagged explicitly under
 **Gaps to close before submission**, not padded.
 
+## Authors (confirmed 2026-08-14)
+
+Same three authors and order as the companion 102-target DUD-E manuscript
+("A provenance-aware workflow for strict receptor-preparation audits and
+reference-pose recovery in molecular docking", currently under review at
+JMM, not yet published):
+
+1. **Andrés Monreal Hernández** (corresponding) — Universidad Estatal de
+   Sonora, Hermosillo, Sonora, Mexico. ORCID: 0009-0009-1207-8597.
+   andres.monreal@ues.mx
+2. **Sara Lizbeth Franco Amaya** — Doctorado en Nanotecnología,
+   Universidad de Sonora, Hermosillo, Sonora, Mexico. ORCID:
+   0009-0005-0272-0241
+3. **Carlos Ivanhoe Martínez Osorio** — Doctorado en Ciencia de Materiales,
+   Universidad de Sonora, Hermosillo, Sonora, Mexico. ORCID:
+   0009-0003-7872-4965
+
+## Relationship to the companion 102-target manuscript
+
+The companion manuscript (same three authors) audits 102 DUD-E
+target/PDB pairs under a related but distinct protocol (Meeko strict
+preparation across three source-and-reader conditions: original DUD-E PDB,
+official RCSB mmCIF, official RCSB legacy PDB) and reports two
+reference-pose cases, BRAF/3D4Q/SM5 and KIF11/3CJO/K30, docked with Vina
+1.2.7 (exhaustiveness 16, seed 20260809). **This manuscript's registry is
+different** (30 candidates from a frozen RCSB clean-discovery ranking, not
+DUD-E) **but shares two PDB identifiers as reference cases** (3D4Q, 3CJO)
+under different protocol parameters (Vina 1.2.5, exhaustiveness 8, seed
+20260812) and reports different RMSD values for them, since the
+preparation/docking runs are independent. This must be handled explicitly,
+not silently:
+
+- The companion manuscript is **under review, not yet published** — per
+  JMM's own reference-list rule ("only includes works that are cited in
+  the text and that have been published or accepted for publication"), it
+  cannot be a numbered reference. It should be mentioned in-text as
+  work by the same authors currently under review (e.g. "a related,
+  independently parameterized audit of 102 DUD-E targets by the same
+  authors is under review elsewhere"), not cited as `[N]`.
+- The Introduction and/or Discussion should state plainly that 3D4Q and
+  3CJO appear in both studies under different Vina configurations and
+  seeds, and that the two RMSD values for each are not expected to match
+  and should not be treated as a replication of each other — they are two
+  independent runs under two independently frozen protocols.
+- This is a disclosure/scope-clarity matter, not a duplicate-submission
+  problem: the registries, inclusion criteria, and central finding (a
+  30-candidate compatibility census with contextual-case cofactor
+  retention vs. a 102-target three-condition source comparison) are
+  substantively different studies.
+
+## AI-use disclosure (required by JMM policy, drafted for Methods)
+
+JMM requires LLM use to be documented in the Methods section. The
+companion manuscript already includes a disclosure sentence for OpenAI
+Codex (GPT-5); this manuscript needs its own, accurate to what was
+actually used here:
+
+> "Claude (Anthropic) was used as computational assistance for pipeline
+> scripting, data analysis, and manuscript drafting. The human authors
+> reviewed the computational evidence, figures, references, and manuscript
+> material and remain responsible for the methods, interpretation, and
+> final submitted text."
+
+This mirrors the companion manuscript's already-accepted phrasing pattern
+exactly (tool name swapped), rather than inventing new wording.
+
 ## Working title (pick one)
 
 1. *"How often does no-repair receptor preparation actually work? A
@@ -304,17 +370,27 @@ matplotlib renders if desired before submission.
    differences anywhere. The abstract's reproducibility claim is now
    verified, not merely asserted. Not tested: reproduction on a different
    OS/Meeko/Vina build (cross-environment reproducibility remains open).
-4. **Author list, affiliations, ORCID, funding/COI statement** — none of
-   this is present in the repository and must come from the user, not be
-   invented.
-5. **Repository publication decision — now a hard submission requirement,
-   not a nice-to-have.** JMM mandates a Data Availability Statement with a
-   public, citable dataset location for every original research article
-   (confirmed above). The project's standing instruction remains: never
-   create a GitHub remote or publish/release/deposit to Zenodo without new,
-   explicit authorization. This is not resolved by anything in this
-   session — it needs a direct decision from the user when ready to move
-   toward submission.
+4. ~~Author list, affiliations, ORCID~~ **Done** — confirmed 2026-08-14, see
+   "Authors" section above (same three authors and order as the companion
+   102-target manuscript). **Still outstanding: funding statement and
+   competing-interests statement** — not invented here; JMM requires both
+   explicitly under "Statements and Declarations" and returns incomplete
+   submissions that omit them. Ask the user directly: (a) any grant/funding
+   source to declare, or the standard "no funds, grants, or other support
+   were received" statement; (b) any competing interests, or the standard
+   "the authors have no relevant financial or non-financial interests to
+   disclose."
+5. ~~Repository publication decision.~~ **Done** — created public at
+   https://github.com/sircalch/docking-reference-audit (2026-08-14),
+   containing `protocol/`, `data/`, `scripts/`, `reports/`, `manuscript/`;
+   `raw/` and `derived/` intentionally excluded (gitignored, fully
+   regenerable — confirmed by
+   `reports/REPRODUCIBILITY-VERIFICATION-v0.1.md`). **Still open: Zenodo
+   integration and a versioned GitHub Release for the permanent DOI** the
+   Data Availability Statement should ultimately cite — this needs the
+   user's own GitHub-authenticated login to Zenodo, and a deliberate
+   decision on when to cut the first release (once the manuscript content
+   is stable, not necessarily now).
 6. ~~JMM's current author guidelines have not been checked.~~ **Done** — see
    "Confirmed journal requirements" above (structured abstract, LLM
    disclosure, Data Availability Statement, reference style, figure specs,
