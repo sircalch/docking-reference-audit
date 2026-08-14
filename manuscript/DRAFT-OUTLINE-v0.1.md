@@ -61,28 +61,22 @@ not silently:
 ## AI-use disclosure (required by JMM policy, drafted for Methods)
 
 JMM requires LLM use to be documented in the Methods section. Confirmed
-final wording (2026-08-14), generic tool naming per the authors'
+final wording (2026-08-14), kept brief and generic per the authors'
 preference:
 
-> "A large language model (LLM) was used as computational assistance for
-> pipeline scripting, data analysis, and manuscript drafting. The human
-> authors reviewed the computational evidence, figures, references, and
-> manuscript material and remain responsible for the methods,
-> interpretation, and final submitted text."
+> "A large language model (LLM) was used as a computational aid during
+> this study, under the authors' direction and review. The authors are
+> responsible for the study design, interpretation, and final manuscript
+> text."
 
-This mirrors the companion manuscript's already-used phrasing pattern
-("computational assistance during software and document organization")
-rather than inventing new wording, generalized from "Claude (Anthropic)"
-to "a large language model (LLM)" as requested. It was deliberately kept
-calibrated to the actual scope of the work rather than minimized: the
-public repository (github.com/sircalch/docking-reference-audit) already
-carries a `Co-Authored-By: Claude` trailer with detailed technical
-descriptions on every commit touching scripts, analysis, or reports. A
-disclosure that understated that scope (e.g. describing it as only "data
-organization") would visibly contradict the public commit history any
-reviewer or reader can open — an inconsistency that is a real submission
-risk, unlike an accurate, calibrated disclosure. This was raised and
-resolved explicitly with the authors rather than silently adjusted.
+Kept short and non-itemized rather than listing specific uses, per the
+authors' request — but not reduced to a description narrower than what
+was actually done (e.g. "data arrangement only"), since the public
+repository (github.com/sircalch/docking-reference-audit) already carries
+a `Co-Authored-By: Claude` trailer with detailed technical descriptions on
+every commit touching scripts, analysis, or reports. A disclosure
+inconsistent with that visible, public record would be a real submission
+risk; a brief but accurate one is not.
 
 ## Statements and Declarations (confirmed 2026-08-14)
 
