@@ -24,11 +24,67 @@ and could work as a Short Communication if JMM's editor prefers that framing.
 
 ## Article type
 
-**Original Paper** (JMM does not have a strict "Technical Note" category in
-its current author guidelines — verify at submission time). Target length:
+**Original Paper (Research)** — confirmed against JMM's live submission
+guidelines (link.springer.com/journal/894/submission-guidelines, checked
+2026-08-14). JMM's peer-reviewed article types are: Original Papers
+(Research), Reviews, Short Comments, Software Reports, Brief Reports. No
+formal "Technical Note" category exists; "Original Paper" is the correct
+choice for this manuscript, not a placeholder guess. Target length:
 short-to-medium (this is method/reproducibility content, not a large
 screening campaign) — roughly 3500-5000 words plus figures, in line with
 JMM's "Computational Methods" thread.
+
+## Confirmed journal requirements (verified 2026-08-14, not guessed)
+
+Checked directly at link.springer.com/journal/894/submission-guidelines.
+Requirements that change what still needs to be done, in order of impact:
+
+1. **Structured abstract, two mandatory subheadings.** JMM requires the
+   abstract be split into **Context** (why the work was done, relevance,
+   summary of results) and **Methods** (computational techniques and
+   software used — for this manuscript: Meeko 0.7.1, AutoDock Vina 1.2.5,
+   RDKit, NumPy Kabsch cross-check). 150-250 words total, no references, no
+   undefined abbreviations. **The current draft abstract above is a single
+   flowing paragraph and must be restructured into these two labeled parts
+   before submission** — not just trimmed for length.
+2. **LLM use must be disclosed in the Methods section.** JMM: "Use of an
+   LLM should be properly documented in the Methods section... LLMs do not
+   currently satisfy our authorship criteria." This manuscript's analysis
+   pipeline, scripts, and prose were substantially produced with Claude
+   (Anthropic). This needs an explicit, honest disclosure sentence in
+   Methods — drafting it is now a required task, not optional polish. It
+   does not make the user ineligible for authorship; it is a disclosure
+   requirement, not a prohibition.
+3. **A Data Availability Statement is mandatory, not optional**, for every
+   original research article, with a link to a publicly archived dataset.
+   This directly upgrades the standing "repository publication decision"
+   from a nice-to-have to a hard submission blocker: **the repository (or
+   at minimum the versioned `data/`/`reports/` manifests) needs a real,
+   public, citable location before this can be submitted** — e.g. a GitHub
+   release plus a Zenodo DOI (Zenodo is free, integrates with GitHub, and
+   is a standard, discipline-neutral choice for this kind of computational
+   audit). This is a new-and-separate authorization the user has not yet
+   given (the project's standing constraint is "no publish/release/Zenodo
+   without new explicit instruction") — do not act on this without asking.
+4. **Numbered citations, square brackets, e.g. `[3]` or `[1-3, 7]`**,
+   numbered reference list in citation order (not alphabetical), DOIs as
+   full links where available. Standard journal-abbreviation style (ISSN
+   LTWA) or full journal title if unsure.
+5. **Structure confirmed**: Introduction (purpose + short literature
+   review) → Methods (enough detail to repeat the work) → Results (concise,
+   avoid very large tables) → Discussion (interpretation vs. other authors'
+   work) → Summary (concise, does not repeat the Discussion) → **Statements
+   and Declarations** (Funding, Competing Interests, Author Contributions,
+   Data Availability — this exact heading, placed after References; missing
+   it causes the submission to be "returned as incomplete").
+6. **Format**: Word .docx (10-pt Times Roman, ≤3 heading levels) or LaTeX
+   (Springer Nature template recommended). Figures: vector (EPS) or TIFF,
+   minimum 300 dpi for halftones/600 dpi for combination art, sized to
+   84 mm or 174 mm column width. Raw structure/data files (.pdb, .csv,
+   .xlsx) are explicitly supported as Supplementary Information — this
+   repository's manifests can likely be submitted close to as-is for that
+   part, once a citable public location exists (see point 3).
+7. **4-6 keywords required.**
 
 ## Abstract (draft — real numbers only)
 
@@ -251,15 +307,26 @@ matplotlib renders if desired before submission.
 4. **Author list, affiliations, ORCID, funding/COI statement** — none of
    this is present in the repository and must come from the user, not be
    invented.
-5. **Repository publication decision** — the manuscript's data-availability
-   section needs a real, public URL. The project has explicit standing
-   instructions to never create a GitHub remote or publish without new
-   authorization — this must be revisited deliberately when ready to submit,
-   not assumed.
-6. **JMM's current author guidelines** (word/figure limits, reference style,
-   submission categories) have not been checked against this outline — pull
-   them directly from Springer before final formatting.
-7. **Optional but valuable: 2-3 more contextual cases** processed under the
+5. **Repository publication decision — now a hard submission requirement,
+   not a nice-to-have.** JMM mandates a Data Availability Statement with a
+   public, citable dataset location for every original research article
+   (confirmed above). The project's standing instruction remains: never
+   create a GitHub remote or publish/release/deposit to Zenodo without new,
+   explicit authorization. This is not resolved by anything in this
+   session — it needs a direct decision from the user when ready to move
+   toward submission.
+6. ~~JMM's current author guidelines have not been checked.~~ **Done** — see
+   "Confirmed journal requirements" above (structured abstract, LLM
+   disclosure, Data Availability Statement, reference style, figure specs,
+   Statements and Declarations section).
+7. **Draft the LLM-use disclosure sentence for Methods** (new, from
+   requirement 2 above) — factual, no more than 1-2 sentences, e.g. stating
+   that Claude (Anthropic) was used for pipeline scripting, data analysis,
+   and drafting under the user's direction and review, consistent with
+   JMM's authorship/LLM policy.
+8. **Restructure the draft abstract into Context/Methods subheadings**
+   (currently one flowing paragraph) and trim to 150-250 words.
+9. **Optional but valuable: 2-3 more contextual cases** processed under the
    same chemically-justified retained-component discipline, to grow both
    the preparation-attempt census and, if any succeed, the docking-outcome
-   table beyond n=4.
+   table beyond n=7.
