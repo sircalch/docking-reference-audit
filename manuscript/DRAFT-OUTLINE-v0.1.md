@@ -239,9 +239,15 @@ matplotlib renders if desired before submission.
    `.gitignore`), so whoever writes the manuscript must re-run
    `python scripts/render_audit_figures.py` and pull fresh exports before
    drafting figure captions.
-3. **No independent reproduction has been run from a clean checkout** —
-   worth doing once before submission so the "reproducibility" claim in the
-   abstract is itself verified, not asserted.
+3. ~~No independent reproduction has been run.~~ **Done.**
+   `reports/REPRODUCIBILITY-VERIFICATION-v0.1.md` independently re-ran
+   classification, extraction, strict preparation (all 23 attempts), RMSD
+   calculation (all 6 verified cases + the 1 unverified case), a live
+   RCSB re-download and checksum match for 3 representative structures, and
+   a full Vina re-run (bit-identical output PDBQT) — zero substantive
+   differences anywhere. The abstract's reproducibility claim is now
+   verified, not merely asserted. Not tested: reproduction on a different
+   OS/Meeko/Vina build (cross-environment reproducibility remains open).
 4. **Author list, affiliations, ORCID, funding/COI statement** — none of
    this is present in the repository and must come from the user, not be
    invented.
