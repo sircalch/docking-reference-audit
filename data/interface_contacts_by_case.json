@@ -1,0 +1,769 @@
+{
+  "pilot-001": {
+    "pdbId": "1STP",
+    "residues": [
+      {
+        "chain": "A",
+        "resi": 45,
+        "resname": "SER",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 128,
+        "resname": "ASP",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 27,
+        "resname": "SER",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 47,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 49,
+        "resname": "ASN",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 88,
+        "resname": "SER",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 48,
+        "resname": "GLY",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 92,
+        "resname": "TRP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 43,
+        "resname": "TYR",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 90,
+        "resname": "THR",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 79,
+        "resname": "TRP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 108,
+        "resname": "TRP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 23,
+        "resname": "ASN",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 110,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 50,
+        "resname": "ALA",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 25,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 86,
+        "resname": "ALA",
+        "isHydrogenBond": false
+      }
+    ]
+  },
+  "pilot-007": {
+    "pdbId": "3D4Q",
+    "residues": [
+      {
+        "chain": "A",
+        "resi": 501,
+        "resname": "GLU",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 532,
+        "resname": "CYS",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 471,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 505,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 583,
+        "resname": "PHE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 529,
+        "resname": "THR",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 531,
+        "resname": "TRP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 514,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 483,
+        "resname": "LYS",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 527,
+        "resname": "ILE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 463,
+        "resname": "ILE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 465,
+        "resname": "SER",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 481,
+        "resname": "ALA",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 530,
+        "resname": "GLN",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 594,
+        "resname": "ASP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 482,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 536,
+        "resname": "SER",
+        "isHydrogenBond": false
+      }
+    ]
+  },
+  "expansion-001": {
+    "pdbId": "1B9V",
+    "residues": [
+      {
+        "chain": "A",
+        "resi": 374,
+        "resname": "ARG",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 226,
+        "resname": "GLU",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 150,
+        "resname": "ARG",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 177,
+        "resname": "TRP",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 276,
+        "resname": "GLU",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 292,
+        "resname": "ARG",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 409,
+        "resname": "TYR",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 132,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 149,
+        "resname": "ASP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 275,
+        "resname": "GLU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 117,
+        "resname": "GLU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 178,
+        "resname": "SER",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 294,
+        "resname": "ASN",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 223,
+        "resname": "ARG",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 116,
+        "resname": "ARG",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 221,
+        "resname": "ILE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 245,
+        "resname": "ALA",
+        "isHydrogenBond": false
+      }
+    ]
+  },
+  "pilot-008": {
+    "pdbId": "3CJO",
+    "residues": [
+      {
+        "chain": "B",
+        "resi": 117,
+        "resname": "GLY",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "B",
+        "resi": 137,
+        "resname": "PRO",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 127,
+        "resname": "TRP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 211,
+        "resname": "TYR",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 116,
+        "resname": "GLU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 136,
+        "resname": "ILE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 218,
+        "resname": "ALA",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 214,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 119,
+        "resname": "ARG",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 217,
+        "resname": "GLY",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 133,
+        "resname": "ALA",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 160,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 239,
+        "resname": "PHE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 215,
+        "resname": "GLU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 118,
+        "resname": "GLU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "B",
+        "resi": 221,
+        "resname": "ARG",
+        "isHydrogenBond": false
+      }
+    ]
+  },
+  "pilot-002": {
+    "pdbId": "1HVR",
+    "residues": [
+      {
+        "chain": "A",
+        "resi": 29,
+        "resname": "ASP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 50,
+        "resname": "ILE",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 30,
+        "resname": "ASP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 49,
+        "resname": "GLY",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 8,
+        "resname": "ARG",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 48,
+        "resname": "GLY",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 27,
+        "resname": "GLY",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 28,
+        "resname": "ALA",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 47,
+        "resname": "ILE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 23,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 82,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 81,
+        "resname": "PRO",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 25,
+        "resname": "ASP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 84,
+        "resname": "ILE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 32,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      }
+    ]
+  },
+  "pilot-006": {
+    "pdbId": "3PTB",
+    "residues": [
+      {
+        "chain": "A",
+        "resi": 219,
+        "resname": "GLY",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 190,
+        "resname": "SER",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 189,
+        "resname": "ASP",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 216,
+        "resname": "GLY",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 226,
+        "resname": "GLY",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 192,
+        "resname": "GLN",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 195,
+        "resname": "SER",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 220,
+        "resname": "CYS",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 214,
+        "resname": "SER",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 215,
+        "resname": "TRP",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 213,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 191,
+        "resname": "CYS",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 228,
+        "resname": "TYR",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 217,
+        "resname": "SER",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 224,
+        "resname": "LYS",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 225,
+        "resname": "PRO",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 221,
+        "resname": "ALA",
+        "isHydrogenBond": false
+      }
+    ]
+  },
+  "pilot-003": {
+    "pdbId": "1IEP",
+    "residues": [
+      {
+        "chain": "A",
+        "resi": 315,
+        "resname": "THR",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 286,
+        "resname": "GLU",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 381,
+        "resname": "ASP",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 360,
+        "resname": "ILE",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 290,
+        "resname": "MET",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 318,
+        "resname": "MET",
+        "isHydrogenBond": true
+      },
+      {
+        "chain": "A",
+        "resi": 299,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 271,
+        "resname": "LYS",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 253,
+        "resname": "TYR",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 382,
+        "resname": "PHE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 289,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 256,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 317,
+        "resname": "PHE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 361,
+        "resname": "HIS",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 269,
+        "resname": "ALA",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 321,
+        "resname": "GLY",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 248,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 370,
+        "resname": "LEU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 313,
+        "resname": "ILE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 380,
+        "resname": "ALA",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 359,
+        "resname": "PHE",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 316,
+        "resname": "GLU",
+        "isHydrogenBond": false
+      },
+      {
+        "chain": "A",
+        "resi": 270,
+        "resname": "VAL",
+        "isHydrogenBond": false
+      }
+    ]
+  }
+}
