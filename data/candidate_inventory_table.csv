@@ -1,0 +1,31 @@
+case_id,pdb_id,ligand,stratum,preparation_outcome,docking_outcome
+pilot-001,1STP,BTN,clean,preparado,completado
+pilot-002,1HVR,XK2,contextual,preparado,completado
+pilot-003,1IEP,STI,contextual,preparado,completado
+pilot-004,1FPU,PRC,contextual,fallido (meeko_template_matching_failed),—
+pilot-005,2P16,GG2,contextual,no intentado,—
+pilot-006,3PTB,BEN,contextual,preparado,completado
+pilot-007,3D4Q,SM5,contextual,preparado,completado
+pilot-008,3CJO,K30,contextual,preparado,completado
+expansion-001,1B9V,RA2,contextual,preparado,completado
+expansion-002,1CDE,DZF,contextual,no intentado,—
+expansion-003,1E66,HUX,contextual,no intentado,—
+expansion-004,1H22,E10,contextual,no intentado,—
+expansion-005,1KZK,JE2,contextual,fallido (meeko_alternate_location_and_template_matching_failed),—
+expansion-006,1MZC,BNE,contextual,no intentado,—
+expansion-007,1N1M,A3M,contextual,no intentado,—
+expansion-008,1R55,097,contextual,no intentado,—
+expansion-009,9CY0,A1A55,contextual,fallido (meeko_alternate_location_requires_choice),—
+expansion-010,6FMC,DUE,clean,fallido (meeko_alternate_location_requires_choice),—
+expansion-011,7G0Z,WMB,clean,fallido (meeko_alternate_location_and_template_matching_failed),—
+expansion-012,7AOT,RTQ,clean,fallido (meeko_alternate_location_and_template_matching_failed),—
+expansion-013,7TH6,I56,clean,fallido (meeko_alternate_location_requires_choice),—
+expansion-014,6Q7D,HOT,clean,fallido (meeko_alternate_location_requires_choice),—
+expansion-015,1NWZ,HC4,clean,fallido (meeko_alternate_location_requires_choice),—
+expansion-016,1X8Q,HEM,clean,fallido (meeko_alternate_location_requires_choice),—
+expansion-017,4X5P,3XJ,clean,fallido (meeko_alternate_location_requires_choice),—
+expansion-018,5HBS,RTL,clean,fallido (meeko_alternate_location_and_template_matching_failed),—
+expansion-019,9HOO,U5P,contextual,fallido (meeko_alternate_location_requires_choice),—
+expansion-020,4XXG,FAD,clean,fallido (meeko_alternate_location_and_template_matching_failed),—
+expansion-021,2BT9,MFU,contextual,fallido (meeko_alternate_location_requires_choice),—
+expansion-022,6TE2,N4N,clean,fallido (meeko_alternate_location_requires_choice),—
