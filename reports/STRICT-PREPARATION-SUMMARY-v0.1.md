@@ -29,12 +29,13 @@ or alternative preparation policies.
 | expansion-021 | 2BT9 | contextual batch 02 | failed | `meeko_alternate_location_requires_choice` |
 | expansion-019 | 9HOO | contextual batch 03 | failed | `meeko_alternate_location_requires_choice` |
 | pilot-008 | 3CJO | contextual batch 04 | prepared | — |
+| pilot-006 | 3PTB | contextual batch 05 | prepared | — |
 
-Across these eighteen strict attempts, three receptors prepared and fifteen
+Across these nineteen strict attempts, four receptors prepared and fifteen
 were rejected. The two original-subpilot receptors (pilot-001, pilot-007)
-proceeded to the already recorded reference-pose runs; the third prepared
-receptor, pilot-008 (3CJO), is a new completed reference-pose case this
-round — see below.
+proceeded to the already recorded reference-pose runs; pilot-008 (3CJO) and
+pilot-006 (3PTB) are two further completed reference-pose cases from this
+round and the one before it — see below.
 
 Fourteen of the fifteen rejections carry an alternate-location component. The
 three additions from the final clean-registration round (5HBS, 4XXG, 6TE2)
@@ -92,16 +93,33 @@ then completed for this case; see
 `reports/CONTEXTUAL-BATCH-04-RESULTS-v0.1.md` and the updated
 `reports/AUDIT-SYNTHESIS-v0.1.md` for the full result.
 
-Opening the contextual route therefore produced one net new reference-pose
-case (pilot-008) alongside three further failures (9CY0, 2BT9, 9HOO) that
-extend, rather than contradict, the pattern already observed for the clean
-stratum: the overall strict-preparation success rate remains low (3 of 18,
-17%), still dominated by alternate-location incompatibility (14 of 15
-failures), and the earlier "extra non-polymer component" flag on 9HOO was
-found to be a labeling artifact of HETATM records rather than a genuine free
-ligand.
+A fifth contextual case, pilot-006 (3PTB, bovine trypsin with the benzamidine
+inhibitor BEN), used the same retained-component mechanism for a second,
+independently justified cofactor: CA, trypsin's well-characterized structural
+calcium-binding site (Bode and Schwager, 1975), distinct from the S1
+catalytic pocket where benzamidine binds. Strict preparation **succeeded**
+(the fourth prepared receptor in the audit) and docking completed, but the
+docked poses did not recover the experimental position: all nine poses
+returned RMSD ≈5.6 A regardless of score, versus the sub-2 A recovery seen in
+every other completed case. This is reported as a genuine negative
+pose-recovery result — a successful strict preparation does not guarantee an
+accurate docked pose under this frozen protocol. See
+`reports/CONTEXTUAL-BATCH-05-RESULTS-v0.1.md`.
 
-The observation stays descriptive of this eighteen-case sample and is not a
+Opening the contextual route therefore produced two net new prepared
+receptors (pilot-008, pilot-006) alongside three further preparation
+failures (9CY0, 2BT9, 9HOO) that extend, rather than contradict, the pattern
+already observed for the clean stratum: the overall strict-preparation
+success rate remains low (4 of 19, 21%), still dominated by alternate-location
+incompatibility (14 of 15 failures), and the earlier "extra non-polymer
+component" flag on 9HOO was found to be a labeling artifact of HETATM
+records rather than a genuine free ligand. Of the two new prepared receptors,
+only one (pilot-008) recovered the experimental pose to within the range seen
+in the original subpilot; the other (pilot-006) did not, showing that strict
+preparation success and reference-pose recovery are separate outcomes that
+this audit tracks and reports independently.
+
+The observation stays descriptive of this nineteen-case sample and is not a
 general claim about resolution, chain multiplicity, cofactor retention, or
 preparation compatibility.
 
@@ -132,4 +150,7 @@ post hoc.
 - `data/contextual_batch_02_preparation_manifest.csv`;
 - `data/contextual_batch_03_preparation_manifest.csv`;
 - `data/contextual_batch_04_preparation_manifest.csv` (see also
-  `reports/CONTEXTUAL-BATCH-04-RESULTS-v0.1.md` for the full docking result).
+  `reports/CONTEXTUAL-BATCH-04-RESULTS-v0.1.md` for the full docking result);
+- `data/contextual_batch_05_preparation_manifest.csv` (see also
+  `reports/CONTEXTUAL-BATCH-05-RESULTS-v0.1.md` for the full docking result,
+  including the negative pose-recovery outcome).

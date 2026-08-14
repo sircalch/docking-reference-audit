@@ -1,0 +1,2 @@
+case_id,pdb_id,reference_ligand_instance,config_path,config_sha256,center_x,center_y,center_z,size_x,size_y,size_z,padding_angstrom,minimum_size_angstrom,exhaustiveness,num_modes,energy_range,created_at_utc
+pilot-006,3PTB,A:BEN:1,derived/vina-configs/pilot-006_3PTB.txt,764118ef1eac68917c286ceaeee81fd1a1a0ec982350881208c31581366d54f0,-1.856,14.366,16.748,20.000,20.000,20.514,8.0,20.0,8,9,3,2026-08-13T23:58:45.476042Z

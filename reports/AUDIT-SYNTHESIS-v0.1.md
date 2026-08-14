@@ -3,8 +3,8 @@
 ## Purpose and scope
 
 This report combines, in one place, the inclusion criteria, the full candidate
-registry outcome, the strict receptor-preparation results, and the three
-completed reference-pose recoveries produced under protocol v0.1
+registry outcome, the strict receptor-preparation results, and the four
+completed docking runs produced under protocol v0.1
 (`protocol/PROTOCOL-v0.1.md`). It supersedes no other report; it is a synthesis
 generated from the same versioned manifests that back `SUBPILOT-RESULTS-v0.1.md`
 and `STRICT-PREPARATION-SUMMARY-v0.1.md`.
@@ -56,16 +56,17 @@ from RCSB (`data/retrieval_manifest.csv`). Structural classification
 | review required | 0 |
 
 All 12 clean cases were carried through strict receptor preparation. Of the
-18 contextual cases, four have since been assigned an explicit, auditable
+18 contextual cases, five have since been assigned an explicit, auditable
 policy and processed: expansion-009/9CY0 and expansion-021/2BT9 (multi-chain,
 multi-instance, receptor chain and ligand instance selected by minimum
 ligand-to-polymer contact distance), expansion-019/9HOO, whose flagged
 "extra non-polymer component" (CSS) was investigated and found to be a
-covalently modified in-chain residue rather than a free ligand, and
-pilot-008/3CJO, whose two extra components (ADP, MG) were retained as the
-physiological KSP/Eg5 nucleotide cofactor rather than stripped — see "Strict
-receptor preparation" below. The remaining 14 contextual cases have no
-declared policy and have not been processed.
+covalently modified in-chain residue rather than a free ligand, pilot-008/3CJO,
+whose two extra components (ADP, MG) were retained as the physiological
+KSP/Eg5 nucleotide cofactor rather than stripped, and pilot-006/3PTB, whose
+extra component (CA) was retained as trypsin's structural calcium-binding
+site — see "Strict receptor preparation" below. The remaining 13 contextual
+cases have no declared policy and have not been processed.
 
 ## Strict receptor preparation
 
@@ -102,9 +103,15 @@ K30 were removed. This was verified empirically by inspecting the extracted
 receptor PDB directly (27 ADP atoms and the MG ion retained, zero K30/HOH
 atoms).
 
+pilot-006 (3PTB, bovine trypsin with the benzamidine inhibitor BEN) used the
+same mechanism for a second, independently justified retention: CA, trypsin's
+well-characterized structural calcium-binding site (Bode and Schwager, 1975),
+distinct from the S1 catalytic pocket where benzamidine binds. Verified the
+same way: the extracted PDB retains one CA atom, zero BEN/HOH atoms.
+
 | Outcome | Count |
 | --- | ---: |
-| prepared | 3 |
+| prepared | 4 |
 | failed | 15 |
 
 | Failure class | Count |
@@ -119,9 +126,10 @@ evidence that the underlying PDB entry is defective; it reflects
 incompatibility with one specific no-repair preparation choice. Opening the
 contextual route produced three further failures (9CY0, 2BT9, 9HOO, all on
 the pure alternate-location class, matching the dominant failure mode already
-observed across the clean stratum) and one new prepared receptor: pilot-008,
-whose retained-cofactor policy is chemically distinct from every other case
-in the audit and is the first contextual case to reach docking.
+observed across the clean stratum) and two new prepared receptors, pilot-008
+and pilot-006, whose retained-cofactor policies are chemically distinct from
+every other case in the audit and are the first contextual cases to reach
+docking.
 
 **Observation on resolution.** Candidates in this registry were drawn
 disproportionately from the sub-1-angstrom stratum of the frozen
@@ -142,7 +150,7 @@ claim about resolution and Meeko compatibility.
 
 ## Reference-pose recovery (completed cases)
 
-Three cases had both a strictly prepared receptor and a prepared reference
+Four cases had both a strictly prepared receptor and a prepared reference
 ligand, and were docked with AutoDock Vina 1.2.5 (WSL, fixed seed 20260812,
 one CPU, exhaustiveness 8, box derived from the experimental ligand
 coordinates). Each retained all nine requested poses.
@@ -152,41 +160,54 @@ coordinates). Each retained all nine requested poses.
 | pilot-001 | 1STP | BTN (biotin) | -7.244 | 0.689 | 0.689 |
 | pilot-007 | 3D4Q | SM5 | -10.960 | 0.769 | 0.769 |
 | pilot-008 | 3CJO | K30 | -10.890 | 1.504 | 1.154 |
+| pilot-006 | 3PTB | BEN | -6.058 | 5.594 | 5.578 |
 
 RMSD to experiment is identity-mapped, aligned, heavy-atom RMSD after
 verifying RCSB CCD-to-SDF atom order, matching heavy-atom sets, isomeric
 heavy-atom SMILES, and pose counts. For pilot-001/pilot-007 this is
-`data/reference_pose_rmsd.csv`; for pilot-008 (a contextual case processed
-after the original subpilot was frozen) it is the separately tracked
-`data/contextual_batch_04_reference_pose_rmsd.csv`, kept apart specifically
+`data/reference_pose_rmsd.csv`; for pilot-008 and pilot-006 (contextual cases
+processed after the original subpilot was frozen) it is the separately
+tracked `data/contextual_batch_04_reference_pose_rmsd.csv` and
+`data/contextual_batch_05_reference_pose_rmsd.csv`, kept apart specifically
 so `scripts/verify_subpilot_evidence.py` continues to check the original
 two-case evidence unchanged (see `reports/CONTEXTUAL-BATCH-04-RESULTS-v0.1.md`
-for the full pilot-008 result). All three are distinct from the Vina-internal
-RMSD-to-best-pose values in the respective pose-score files, which describe
-pose spread relative to Vina's own top pose, not recovery of the experimental
-pose.
+and `reports/CONTEXTUAL-BATCH-05-RESULTS-v0.1.md` for the full per-case
+results). All four are distinct from the Vina-internal RMSD-to-best-pose
+values in the respective pose-score files, which describe pose spread
+relative to Vina's own top pose, not recovery of the experimental pose.
 
-pilot-008 differs from the other two completed cases in one respect: its
-receptor retains a real physiological cofactor (ADP-Mg) rather than a pocket
-stripped to the polymer chain alone, and its top-score/lowest RMSD (1.504 Å /
-1.154 Å) are higher than the original two (<0.8 Å each) though still well
-under the ligand's own pocket scale. With n=3, this remains far too small a
-sample to draw a recovery-rate conclusion, and none of it should be
-extrapolated to other receptors, ligands, or preparation policies.
+pilot-008 and pilot-006 both differ from the original two cases in retaining
+a real physiological cofactor (ADP-Mg; a structural Ca2+) rather than a
+pocket stripped to the polymer chain alone. The two outcomes diverge sharply:
+pilot-008 recovered the experimental pose to 1.1-1.5 Å, close to the original
+subpilot's range; pilot-006 did not recover it at all — all nine poses sit at
+≈5.6 Å regardless of score, essentially uniform, which for a 9-heavy-atom
+ligand (benzamidine) in a deep, narrow pocket suggests the docked poses
+converged on a different site or orientation rather than a near-miss of the
+true one. No repair, box adjustment, or seed change was applied to
+investigate this — the frozen protocol was run once and the result is
+reported as obtained. With n=4 (two strong recoveries, one moderate, one
+failed), this remains far too small a sample to draw a recovery-rate
+conclusion, and none of it should be extrapolated to other receptors,
+ligands, or preparation policies. It does establish, within this audit, that
+successful strict preparation and successful reference-pose recovery are
+separate outcomes that must be reported independently rather than assumed to
+track together.
 
 ## What this audit does not yet cover
 
-- **14 of 18 contextual candidates remain unprocessed.** Four
-  (expansion-009/9CY0, expansion-021/2BT9, expansion-019/9HOO, pilot-008/3CJO)
-  were processed under an explicit, auditable policy; three failed strict
-  preparation (`meeko_alternate_location_requires_choice`) and one
-  (pilot-008) succeeded and was carried through to a third completed
-  reference-pose case. The other 14 have no declared policy; most involve
-  genuine free non-polymer components (ions, sugars, cofactors) whose
-  retention or removal has not yet been decided case by case.
+- **13 of 18 contextual candidates remain unprocessed.** Five
+  (expansion-009/9CY0, expansion-021/2BT9, expansion-019/9HOO, pilot-008/3CJO,
+  pilot-006/3PTB) were processed under an explicit, auditable policy; three
+  failed strict preparation (`meeko_alternate_location_requires_choice`) and
+  two (pilot-008, pilot-006) succeeded and were carried through to completed
+  docking runs — though only pilot-008 recovered the experimental pose. The
+  other 13 have no declared policy; most involve genuine free non-polymer
+  components (ions, sugars, cofactors) whose retention or removal has not yet
+  been decided case by case.
 - **No independent reproduction.** No one has re-run the full pipeline from
-  an empty checkout to confirm it reproduces 30 candidates → 18 strict
-  attempts → 3 successes deterministically end to end.
+  an empty checkout to confirm it reproduces 30 candidates → 19 strict
+  attempts → 4 successes deterministically end to end.
 - **No claim of generality.** Findings describe compatibility with Meeko
   0.7.1 under one specific no-repair policy (with one documented, explicitly
   justified cofactor-retention extension), applied to one specific,
@@ -199,13 +220,16 @@ extrapolated to other receptors, ligands, or preparation policies.
   `data/eligibility_register.csv` — registry and classification;
 - `data/strict_preparation_manifest.csv`,
   `data/clean_batch_{01..11}_preparation_manifest.csv`,
-  `data/contextual_batch_{01..04}_preparation_manifest.csv` — all 18
+  `data/contextual_batch_{01..05}_preparation_manifest.csv` — all 19
   preparation attempts;
 - `data/reference_pose_rmsd.csv`, `data/vina_pose_scores.csv` — the original
   two completed reference-pose recoveries;
 - `data/contextual_batch_04_reference_pose_rmsd.csv`,
   `data/contextual_batch_04_vina_pose_scores.csv` — the third completed
-  reference-pose recovery (pilot-008), tracked separately by design;
+  docking run (pilot-008, recovered), tracked separately by design;
+- `data/contextual_batch_05_reference_pose_rmsd.csv`,
+  `data/contextual_batch_05_vina_pose_scores.csv` — the fourth completed
+  docking run (pilot-006, did not recover), tracked separately by design;
 - `reports/generated/figures/` — figures 01-04, regenerated by
   `scripts/render_audit_figures.py` (see `reports/FIGURE-CATALOG-v0.1.md`);
 - `python scripts/verify_subpilot_evidence.py` reproduces the original

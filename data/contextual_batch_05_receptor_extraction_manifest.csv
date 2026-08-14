@@ -1,0 +1,2 @@
+case_id,pdb_id,receptor_chain,source_path,source_sha256,output_path,output_sha256,output_bytes,operations,created_at_utc
+pilot-006,3PTB,A,raw/structures/pilot-006_3PTB.cif,d2744dbacfb97ec9b4ff7f5cf4b204418bccf92e46b63130bfebb3916260232f,derived/strict-receptors/pilot-006_3PTB_chain-A_strict.pdb,ee83e834abd7b256aa956fddce0e98be611648703ffeb1d76f8fa83c8e421ed5,139400,select declared chain; remove other chains; remove water and declared ligand; retain declared non-polymer components (CA); no repair/altloc selection/residue deletion,2026-08-13T23:58:19.523510Z
