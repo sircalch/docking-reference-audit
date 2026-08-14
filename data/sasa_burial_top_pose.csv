@@ -1,0 +1,8 @@
+case_id,pdb_id,receptor_heavy_atoms,ligand_heavy_atoms,sasa_receptor_alone_A2,sasa_ligand_alone_A2,sasa_complex_A2,buried_interface_area_A2
+pilot-001,1STP,901,16,7017.6,406.9,6873.5,551.1
+pilot-007,3D4Q,2107,28,13304.2,581.9,13055.5,830.6
+expansion-001,1B9V,3042,25,15756.5,530.7,15566.8,720.4
+pilot-008,3CJO,2622,33,16564.4,631.9,16390.8,805.4
+pilot-002,1HVR,757,48,6575.6,724.2,6443.3,856.5
+pilot-006,3PTB,1630,9,9245.2,268.8,9158.4,355.6
+pilot-003,1IEP,2229,37,14576.8,772.5,14212.0,1137.3
