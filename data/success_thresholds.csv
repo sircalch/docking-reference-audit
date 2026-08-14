@@ -1,0 +1,8 @@
+case_id,pdb_id,top_score_rmsd_angstrom,best_rmsd_angstrom,success_le_1_0A,success_le_2_0A,success_le_3_0A,mapping_status
+expansion-001,1B9V,0.930,0.591,yes,yes,yes,verified
+pilot-001,1STP,0.689,0.689,yes,yes,yes,verified
+pilot-002,1HVR,2.493,1.664,no,yes,yes,verified
+pilot-003,1IEP,,,not_verified,not_verified,not_verified,not_verified
+pilot-006,3PTB,5.594,5.578,no,no,no,verified
+pilot-007,3D4Q,0.769,0.769,yes,yes,yes,verified
+pilot-008,3CJO,1.504,1.154,no,yes,yes,verified
