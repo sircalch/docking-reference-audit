@@ -33,7 +33,7 @@ def read_rows(path: Path) -> list[dict[str, str]]:
 def save(figure: plt.Figure, destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     figure.savefig(destination.with_suffix(".svg"), bbox_inches="tight")
-    figure.savefig(destination.with_suffix(".png"), dpi=300, bbox_inches="tight")
+    figure.savefig(destination.with_suffix(".png"), dpi=900, bbox_inches="tight")
     plt.close(figure)
 
 

@@ -162,7 +162,7 @@ def render_case(case: dict[str, str], output_dir: Path) -> str:
     output_dir.mkdir(parents=True, exist_ok=True)
     stem = output_dir / f"binding-site-{case_id}-{pdb_id}"
     figure.savefig(stem.with_suffix(".svg"), bbox_inches="tight")
-    figure.savefig(stem.with_suffix(".png"), dpi=300, bbox_inches="tight")
+    figure.savefig(stem.with_suffix(".png"), dpi=900, bbox_inches="tight")
     plt.close(figure)
     return f"{case_id} ({pdb_id}): rendered, RMSD {rmsd_label}"
 

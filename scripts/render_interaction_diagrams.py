@@ -116,7 +116,7 @@ def render_case(case: dict[str, str], contacts_by_case: dict, hbonds_by_case: di
     output_dir.mkdir(parents=True, exist_ok=True)
     stem = output_dir / f"interaction-diagram-{case_id}-{pdb_id}"
     figure.savefig(stem.with_suffix(".svg"), bbox_inches="tight")
-    figure.savefig(stem.with_suffix(".png"), dpi=300, bbox_inches="tight")
+    figure.savefig(stem.with_suffix(".png"), dpi=900, bbox_inches="tight")
     plt.close(figure)
     return f"{case_id} ({pdb_id}): {len(residues)} contacting residues, {len(hbond_residues)} H-bond candidates"
 

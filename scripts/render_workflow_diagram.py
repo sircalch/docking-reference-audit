@@ -92,7 +92,7 @@ def render() -> None:
     output = Path("reports/generated/figures/figure-06-workflow")
     output.parent.mkdir(parents=True, exist_ok=True)
     figure.savefig(output.with_suffix(".svg"), bbox_inches="tight")
-    figure.savefig(output.with_suffix(".png"), dpi=300, bbox_inches="tight")
+    figure.savefig(output.with_suffix(".png"), dpi=900, bbox_inches="tight")
     plt.close(figure)
     print(f"Wrote {output}.svg / .png")
 
