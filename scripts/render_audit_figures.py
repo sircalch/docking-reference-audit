@@ -109,8 +109,10 @@ def preparation_outcomes(rows: list[dict[str, str]], destination: Path) -> None:
 
 
 def pose_recovery(rows: list[dict[str, str]], destination: Path) -> None:
+    rows = [row for row in rows if row.get("mapping_status") == "verified"]
     cases = sorted({row["pdb_id"] for row in rows})
-    colors = {case: color for case, color in zip(cases, [TEAL, NAVY, GOLD, CORAL])}
+    palette = [TEAL, NAVY, GOLD, CORAL]
+    colors = {case: palette[index % len(palette)] for index, case in enumerate(cases)}
     figure, axis = plt.subplots(figsize=(7.6, 5.2))
     for case in cases:
         selected = [row for row in rows if row["pdb_id"] == case]

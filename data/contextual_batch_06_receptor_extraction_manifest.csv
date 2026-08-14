@@ -1,0 +1,2 @@
+case_id,pdb_id,receptor_chain,source_path,source_sha256,output_path,output_sha256,output_bytes,operations,created_at_utc
+pilot-002,1HVR,A,raw/structures/pilot-002_1HVR.cif,88ae65ea8ab9756b408a94ab02fe922c1d80a79e6226d796f2a565aea3c0dda6,derived/strict-receptors/pilot-002_1HVR_chain-A_strict.pdb,724b39c723cf925790fbd7e1ef8c7a59dc04b513f8dd9bdd03da82bc2e9955a2,80852,select declared chain; remove other chains; remove water and declared ligand; retain declared non-polymer components (CSO); no repair/altloc selection/residue deletion,2026-08-14T00:34:56.637267Z

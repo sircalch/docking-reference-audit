@@ -1,0 +1,2 @@
+case_id,pdb_id,reference_ligand_instance,config_path,config_sha256,center_x,center_y,center_z,size_x,size_y,size_z,padding_angstrom,minimum_size_angstrom,exhaustiveness,num_modes,energy_range,created_at_utc
+pilot-002,1HVR,A:XK2:263,derived/vina-configs/pilot-002_1HVR.txt,c67b1cef641b0e9df0ed0f46f7a4ace6ca9f8f3a232069fac24540a08c85bf96,-8.715,15.544,27.900,25.970,23.460,33.102,8.0,20.0,8,9,3,2026-08-14T00:35:45.260809Z

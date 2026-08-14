@@ -1,0 +1,2 @@
+case_id,pdb_id,receptor_chain,source_path,source_sha256,output_path,output_sha256,output_bytes,operations,created_at_utc
+expansion-001,1B9V,A,raw/structures/expansion-001_1B9V.cif,06ecc2f0c82d97ca07a88379a9597231c043bf43cd0a338520fbf6f71d0f582c,derived/strict-receptors/expansion-001_1B9V_chain-A_strict.pdb,b2a33b2435a6e7b6ab67b765424f38704fe6579f4370a6bb9515d25ba3d3d999,258628,select declared chain; remove other chains; remove water and declared ligand; retain declared non-polymer components (CA); no repair/altloc selection/residue deletion,2026-08-14T00:35:05.940697Z

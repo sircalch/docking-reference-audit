@@ -1,0 +1,10 @@
+case_id,pdb_id,component_id,mode,affinity_kcal_mol,experimental_reference_heavy_atom_rmsd_angstrom,mapping_status,mapping_note
+expansion-001,1B9V,RA2,1,-7.501,0.930177,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+expansion-001,1B9V,RA2,2,-6.321,1.012262,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+expansion-001,1B9V,RA2,3,-6.301,2.154143,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+expansion-001,1B9V,RA2,4,-6.146,1.953159,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+expansion-001,1B9V,RA2,5,-6.143,2.174524,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+expansion-001,1B9V,RA2,6,-6.134,1.285440,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+expansion-001,1B9V,RA2,7,-5.973,1.134848,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+expansion-001,1B9V,RA2,8,-5.93,0.971330,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"
+expansion-001,1B9V,RA2,9,-5.727,0.591401,verified,"CCD-to-SDF element order, experimental heavy atoms, isomeric SMILES and pose count verified"

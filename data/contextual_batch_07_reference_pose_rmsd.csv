@@ -1,0 +1,10 @@
+case_id,pdb_id,component_id,mode,affinity_kcal_mol,experimental_reference_heavy_atom_rmsd_angstrom,mapping_status,mapping_note
+pilot-003,1IEP,STI,1,-12.68,,not_verified,pilot-003: PDBQT pose count differs from parsed Vina score count
+pilot-003,1IEP,STI,2,-11.08,,not_verified,pilot-003: PDBQT pose count differs from parsed Vina score count
+pilot-003,1IEP,STI,3,-10.11,,not_verified,pilot-003: PDBQT pose count differs from parsed Vina score count
+pilot-003,1IEP,STI,4,-9.789,,not_verified,pilot-003: PDBQT pose count differs from parsed Vina score count
+pilot-003,1IEP,STI,5,-9.672,,not_verified,pilot-003: PDBQT pose count differs from parsed Vina score count
+pilot-003,1IEP,STI,6,-9.391,,not_verified,pilot-003: PDBQT pose count differs from parsed Vina score count
+pilot-003,1IEP,STI,7,-9.184,,not_verified,pilot-003: PDBQT pose count differs from parsed Vina score count
+pilot-003,1IEP,STI,8,-8.898,,not_verified,pilot-003: PDBQT pose count differs from parsed Vina score count
+pilot-003,1IEP,STI,9,-8.468,,not_verified,pilot-003: PDBQT pose count differs from parsed Vina score count

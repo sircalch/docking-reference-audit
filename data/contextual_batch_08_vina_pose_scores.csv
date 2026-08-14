@@ -1,0 +1,10 @@
+case_id,pdb_id,mode,affinity_kcal_mol,rmsd_to_best_lower_bound_angstrom,rmsd_to_best_upper_bound_angstrom
+expansion-001,1B9V,1,-7.501,0,0
+expansion-001,1B9V,2,-6.321,2.435,5.592
+expansion-001,1B9V,3,-6.301,2.016,5.58
+expansion-001,1B9V,4,-6.146,1.406,2.119
+expansion-001,1B9V,5,-6.143,2.319,4.924
+expansion-001,1B9V,6,-6.134,2.24,5.55
+expansion-001,1B9V,7,-5.973,2.307,5.319
+expansion-001,1B9V,8,-5.93,2.529,5.039
+expansion-001,1B9V,9,-5.727,1.78,2.021

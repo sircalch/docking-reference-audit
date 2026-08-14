@@ -1,0 +1,10 @@
+case_id,pdb_id,mode,affinity_kcal_mol,rmsd_to_best_lower_bound_angstrom,rmsd_to_best_upper_bound_angstrom
+pilot-002,1HVR,1,-6.033,0,0
+pilot-002,1HVR,2,-5.893,1.454,2.078
+pilot-002,1HVR,3,-5.86,0.927,9.24
+pilot-002,1HVR,4,-5.841,2.159,8.189
+pilot-002,1HVR,5,-5.825,2.096,6.176
+pilot-002,1HVR,6,-5.71,4.787,8.781
+pilot-002,1HVR,7,-5.633,3.974,7.128
+pilot-002,1HVR,8,-5.601,4.758,9.282
+pilot-002,1HVR,9,-5.491,6.898,9.564

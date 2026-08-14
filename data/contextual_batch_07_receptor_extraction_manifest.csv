@@ -1,0 +1,2 @@
+case_id,pdb_id,receptor_chain,source_path,source_sha256,output_path,output_sha256,output_bytes,operations,created_at_utc
+pilot-003,1IEP,A,raw/structures/pilot-003_1IEP.cif,0929a6fae4aa67875ed0c8d06b650f0a4ec7bb104011abfc7c8ee402c672ca27,derived/strict-receptors/pilot-003_1IEP_chain-A_strict.pdb,7df268ff7daace0794fb7a09ac98ceb4092145ea9f707a02e3d773bb081c0e99,191470,select declared chain; remove other chains; remove ligands and waters; no repair/altloc selection,2026-08-14T00:35:01.827981Z
