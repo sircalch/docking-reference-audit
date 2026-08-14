@@ -286,19 +286,34 @@ methods audit
 ### 3. Results
 - **3.1 Registry outcome** — 30/30 candidates retrieved and checksummed;
   12 clean / 18 contextual / 0 review-required.
-- **3.2 Strict preparation census** — table of all 19 attempts (12 clean +
-  5 contextual with declared policy); 4 prepared / 15 failed; failure-class
-  breakdown (`meeko_alternate_location_requires_choice` ×10,
-  `meeko_alternate_location_and_template_matching_failed` ×4,
-  `meeko_template_matching_failed` ×1).
-- **3.3 The resolution observation** — within the subset of clean cases
-  with recorded resolution (8 cases, all 0.8-0.99 Å), all 8 failed, all on
-  an alternate-location-related class; explicitly frame as descriptive of
-  this sample, not a general claim.
-- **3.4 Four completed reference-pose cases** — table + per-case narrative:
+- **3.2 Strict preparation census** — table of all 23 attempts (12 clean +
+  9 contextual with declared policy + 2 legacy subpilot); 7 prepared / 16
+  failed (30%); failure-class breakdown (`meeko_alternate_location_requires_choice`
+  ×10, `meeko_alternate_location_and_template_matching_failed` ×5,
+  `meeko_template_matching_failed` ×1) — 15/16 failures (94%) involve an
+  alternate-location conflict; see `reports/FAILURE-MODE-ANALYSIS-v0.1.md`
+  for the full breakdown, a real quoted log excerpt, and why this audit
+  does not use Meeko's `--default_altloc`/`--wanted_altloc` flags (using
+  either would be a repair decision, which is exactly what the frozen
+  policy exists to not make).
+- **3.3 The resolution-altloc tension** — of the 10 registered candidates
+  with an explicit resolution figure recorded at registration (all
+  sub-1.0 Å), all 10 failed preparation, all 10 on an alternate-location
+  cause. Frame plainly: resolution is commonly read as a structure-quality
+  proxy, but in this no-repair pipeline it is anti-correlated with
+  preparability, because the same crystallographic process that resolves
+  sub-angstrom detail is what makes alternate conformations visible and
+  modelable in the first place. Explicitly caveat that this is a
+  corroborating observation over the subset with recorded resolution, not
+  a systematic capture over all 30 candidates.
+- **3.4 Seven completed reference-pose cases** — table + per-case narrative:
   1STP/BTN (0.689 Å), 3D4Q/SM5 (0.769 Å), 3CJO/K30 with retained ADP-Mg
-  (1.504 Å top-score / 1.154 Å best), 3PTB/BEN with retained Ca²⁺ (~5.6 Å,
-  no recovery). State plainly that preparation success and pose-recovery
+  (1.504 Å top-score / 1.154 Å best), 1HVR/XK2 with retained CSO (2.493 Å
+  top-score / 1.664 Å best), 3PTB/BEN with retained Ca²⁺ (~5.6 Å, no
+  recovery — but corroborated as the correct S1 pocket by Table 4/SASA),
+  1B9V/RA2 (0.930 Å top-score / 0.591 Å best), and 1IEP/STI (technically
+  unverifiable, PDBQT pose-count mismatch, reported honestly rather than
+  discarded). State plainly that preparation success and pose-recovery
   success are shown here to be separate outcomes.
 - **3.5 The 9HOO relabeling** — a short subsection on the false "extra
   component" flag turning out to be a covalently modified in-chain residue,
@@ -307,13 +322,23 @@ methods audit
 
 ### 4. Discussion
 - Preparation failure is not the exception here, it is the majority
-  outcome (79%) even before any biological question is asked — this is
-  worth stating plainly as a caution for anyone building an automated
+  outcome (16/23, 70%) even before any biological question is asked — this
+  is worth stating plainly as a caution for anyone building an automated
   docking pipeline on "clean-looking" high-resolution PDB entries.
 - Alternate-location incompatibility as the dominant, specific, and
   addressable (with a different tool policy) failure mode — useful,
   actionable information for tool users, distinct from a vague "docking is
-  hard" statement.
+  hard" statement. 15/16 failures (94%) involve it.
+- The resolution-altloc tension (Section 3.3 /
+  `reports/FAILURE-MODE-ANALYSIS-v0.1.md`): resolution alone is not a
+  reliable proxy for "will prepare cleanly" in a no-repair pipeline — if
+  anything, the opposite, since higher resolution makes alternate
+  conformations more visible in the first place. Frame this as the
+  reviewer-facing answer to "why are there so many failures" — the failures
+  are not evidence the pipeline is broken; they are the pipeline correctly
+  measuring a real, quantifiable property of automated no-repair
+  preparation that most benchmarks never report because they only show
+  cases that already succeeded.
 - The n=4 docking outcomes should not be read as an accuracy estimate; they
   are illustrative of the pipeline's end-to-end functioning and of the
   fact that preparation success does not guarantee pose recovery.
@@ -359,6 +384,31 @@ methods audit
 | Table 7 (new) | RMSD classified against standard success thresholds (≤1.0/≤2.0/≤3.0 Å), top-score and best pose, 6 verified cases | already exists as the table in `reports/INTERACTION-DIAGRAMS-AND-SUCCESS-THRESHOLDS-v0.1.md`, data in `data/success_thresholds.csv` | **done** — re-derived from the already-committed RMSD CSVs; 5/6 verified cases (83%) succeed at the conventional ≤2.0 Å threshold used in benchmarks such as CASF; 3PTB fails at every threshold, 1IEP excluded as not verified |
 | Table 8 (new) | Computational parameters (docking software/version, preparation tool, charge model, exhaustiveness, num_modes, energy_range, seed, CPUs, search-box definition, no-repair policy) | `reports/generated/computational-parameters-table.md`, generated by `scripts/render_computational_parameters_table.py` | **done** — every value read directly from the versioned manifests/configs (`data/*_vina_run_manifest.csv`, `data/strict_preparation_manifest.csv`, `derived/vina-configs/*.txt`); the script asserts uniformity across all runs before writing a single row per parameter, so this is not a claim made from memory |
 | Table 9 (new, supplementary) | Full 30-candidate inventory: PDB ID, ligand, structural stratum (clean/contextual), preparation outcome, docking outcome | `reports/generated/candidate-inventory-table.md`, data in `data/candidate_inventory_table.csv`, generated by `scripts/render_candidate_inventory_table.py` | **done** — joins `data/candidates.csv`, `data/eligibility_register.csv`, and every preparation/docking manifest; totals reconcile exactly with the already-reported 23 attempts / 7 prepared / 7 docked (16 failed + 7 prepared + 7 never attempted = 30). Intended as a supplementary/appendix table for full traceability, not a main-text table — no resolution column, since a reliable per-structure numeric resolution was not captured in a consistent field during registration (the ≤2.0 Å inclusion criterion is already stated qualitatively in Table 1 / Methods) |
+
+## Failure-mode analysis (Discussion material, ready to write from)
+
+`reports/FAILURE-MODE-ANALYSIS-v0.1.md` — written specifically to preempt a
+reviewer/reader reading "16 of 23 attempts failed" as evidence something is
+wrong with the pipeline. It is not; every failure is a deliberate,
+correctly-triggered no-repair policy rejection. Key findings, both derived
+from data already in this repository (no new measurement):
+- **15/16 failures (94%) involve an alternate-location conflict** — one
+  dominant, specific, mechanistically-understood cause, not a diffuse
+  basket of unrelated errors. Real Meeko log excerpt quoted (case
+  expansion-010/6FMC).
+- **The resolution-altloc tension**: all 10 registered candidates with an
+  explicit resolution figure in their registration rationale are
+  sub-1.0 Å, and all 10 failed preparation, all 10 on an
+  alternate-location cause. Resolution — commonly read as a
+  structure-quality shorthand — is, in a no-repair pipeline,
+  anti-correlated with preparability, because the same crystallographic
+  process that resolves sub-angstrom detail is what makes alternate
+  conformations visible in the first place. Explicitly caveated as a
+  corroborating observation over the resolution-tagged subset, not a
+  systematic claim over all 30.
+This material is written and ready; it has not yet been folded into
+Section 3.2/3.3/4 prose (still just outline bullets there) — see
+"Gaps to close before submission" below.
 
 ## Platform integration
 
@@ -433,3 +483,7 @@ matplotlib renders if desired before submission.
    same chemically-justified retained-component discipline, to grow both
    the preparation-attempt census and, if any succeed, the docking-outcome
    table beyond n=7.
+10. **Write Section 3.2/3.3/4 prose from `reports/FAILURE-MODE-ANALYSIS-v0.1.md`**
+    — the failure-mode/resolution-altloc-tension content is fully written
+    and quantified (see "Failure-mode analysis" section above) but still
+    only exists as outline bullets, not manuscript prose.
