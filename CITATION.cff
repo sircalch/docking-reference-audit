@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this project in your work, please cite it using the metadata below."
+title: "Docking Reference Audit"
+abstract: "An independent project to build a curated set of publicly available protein-ligand complexes and audit their preparation for reproducible redocking campaigns. Results are descriptive and reproducible; no conclusions about performance, affinity or biological activity are drawn."
+type: software
+license: MIT
+repository-code: "https://github.com/sircalch/docking-reference-audit"
+keywords:
+  - molecular docking
+  - redocking
+  - reproducibility
+  - protein-ligand complexes
+authors:
+  - family-names: "Monreal Hernández"
+    given-names: "Andrés"
+    orcid: "https://orcid.org/0009-0009-1207-8597"
